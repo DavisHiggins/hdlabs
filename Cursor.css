@@ -1,0 +1,50 @@
+/* Custom cursor — ported from the other Wyatt site. mix-blend-mode: difference
+   plus a white fill renders as black over light surfaces and inverts to white
+   over the dark hero, so the cursor stays legible everywhere while reading
+   visually as black across the bulk of the site. */
+
+@media (pointer: fine) {
+  body { cursor: none; }
+  body a, body button, body .img-card, body input, body textarea, body select, body [data-hover] {
+    cursor: none;
+  }
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  transition:
+    width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    margin 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.cursor-ring--hover {
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  background: rgba(255, 255, 255, 0.08);
+}

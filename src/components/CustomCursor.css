@@ -1,0 +1,175 @@
+/* ── Custom cursor ──────────────────────────────────────────
+   Native cursor is hidden ONLY when the custom cursor is active
+   (html.has-custom-cursor), so touch + reduced setups are safe. */
+
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button,
+html.has-custom-cursor [role='button'],
+html.has-custom-cursor .browser-frame,
+html.has-custom-cursor [data-cursor] {
+  cursor: none;
+}
+
+/* Keep text inputs usable — show the real caret cursor there. */
+html.has-custom-cursor input,
+html.has-custom-cursor textarea,
+html.has-custom-cursor select,
+html.has-custom-cursor [contenteditable='true'] {
+  cursor: auto;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  pointer-events: none;
+}
+
+.cursor__dot,
+.cursor__ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Small precise dot — follows instantly */
+.cursor__dot {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 -3px;
+  border-radius: 50%;
+  background: var(--color-gold-bright);
+  transition: opacity 0.25s ease, background 0.3s ease, transform 0.12s ease;
+}
+
+/* Lerped ring — the expressive element */
+.cursor__ring {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  border: 1px solid rgba(248, 247, 242, 0.6);
+  transition: width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    margin 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease, background 0.3s ease, opacity 0.25s ease;
+}
+
+.cursor__label {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Hidden when pointer leaves the window */
+.cursor--hidden .cursor__dot,
+.cursor--hidden .cursor__ring {
+  opacity: 0;
+}
+
+/* ── States ───────────────────────────────────────────────── */
+
+/* Default + text: keep a clean, neutral read on the dark UI */
+.cursor--default .cursor__ring {
+  border-color: rgba(248, 247, 242, 0.5);
+}
+
+.cursor--text .cursor__ring {
+  width: 18px;
+  height: 18px;
+  margin: -9px 0 0 -9px;
+  border-color: rgba(214, 173, 91, 0.5);
+}
+.cursor--text .cursor__dot {
+  background: var(--color-gold);
+}
+
+/* Links / nav tabs / buttons: gold ring, enlarged with soft glow */
+.cursor--link .cursor__ring,
+.cursor--button .cursor__ring {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  border-color: var(--color-gold);
+  background: rgba(214, 173, 91, 0.1);
+  box-shadow: 0 0 22px -6px rgba(214, 173, 91, 0.5);
+}
+.cursor--link .cursor__dot,
+.cursor--button .cursor__dot {
+  background: var(--color-gold-bright);
+}
+
+/* Gold / accent context: invert to a bright fill so it stays visible */
+.cursor--gold .cursor__ring {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-color: var(--color-gold-bright);
+  background: rgba(242, 199, 110, 0.16);
+}
+
+/* Images / project screenshots / view+project: large ring with "View" label */
+.cursor--image .cursor__ring,
+.cursor--view .cursor__ring,
+.cursor--project .cursor__ring {
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+  border-color: var(--color-gold);
+  background: var(--color-gold-bright);
+}
+.cursor--image .cursor__label,
+.cursor--view .cursor__label,
+.cursor--project .cursor__label {
+  opacity: 1;
+  transform: scale(1);
+}
+.cursor--image .cursor__dot,
+.cursor--view .cursor__dot,
+.cursor--project .cursor__dot {
+  opacity: 0;
+}
+
+/* Command palette items: compact gold ring */
+.cursor--command .cursor__ring {
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border-color: var(--color-gold-bright);
+  background: rgba(242, 199, 110, 0.14);
+}
+
+/* Lab Mode: strengthen the cursor accent globally */
+body.hdl-lab-mode .cursor__ring {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 26px -4px rgba(214, 173, 91, 0.6);
+}
+body.hdl-lab-mode .cursor__dot {
+  background: var(--color-gold-bright);
+  box-shadow: 0 0 10px rgba(242, 199, 110, 0.8);
+}
+
+/* Pressed reaction — transform is owned by JS, so react via border/bg only */
+.cursor__ring--down {
+  border-color: var(--color-gold-bright);
+  background: rgba(242, 199, 110, 0.22);
+}
+
+/* Reduced motion: drop the smoothing transitions */
+@media (prefers-reduced-motion: reduce) {
+  .cursor__ring {
+    transition: border-color 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  }
+}

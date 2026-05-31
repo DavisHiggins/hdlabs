@@ -1,0 +1,45 @@
+:root {
+  /* Base surfaces */
+  --color-bg: #05070b;
+  --color-bg-soft: #090d14;
+  --color-navy: #071426;
+  --color-navy-light: #0d213a;
+
+  /* Accents */
+  --color-gold: #d6ad5b;
+  --color-gold-bright: #f2c76e;
+  --color-blue: #4f8cff;
+
+  /* Text */
+  --color-white: #f8f7f2;
+  --color-muted: #a8afbd;
+  --color-faint: #6c7480;
+
+  /* Lines / borders */
+  --color-line: rgba(255, 255, 255, 0.12);
+  --color-line-soft: rgba(255, 255, 255, 0.06);
+  --color-line-strong: rgba(255, 255, 255, 0.22);
+  --color-gold-line: rgba(214, 173, 91, 0.4);
+
+  /* Glows */
+  --glow-gold: rgba(214, 173, 91, 0.18);
+  --glow-navy: rgba(15, 52, 96, 0.5);
+
+  /* Typography */
+  --font-display: 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Layout */
+  --max-width: 1240px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --section-pad: clamp(5rem, 12vw, 10rem);
+  --radius: 18px;
+  --radius-lg: 26px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Header */
+  --header-height: 72px;
+}

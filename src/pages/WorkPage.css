@@ -1,0 +1,70 @@
+/* Tighten the gap between page head and the engine */
+.page-top .engine--full {
+  padding-top: 1rem;
+}
+
+#projects {
+  scroll-margin-top: 90px;
+}
+#engine, #focus, #launch {
+  scroll-margin-top: 90px;
+}
+
+/* ── Project Focus band ── */
+.work-focus {
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.work-focus__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.work-focus__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+.work-focus__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+
+.work-focus__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  max-width: 46ch;
+}
+
+.work-focus__visual {
+  position: relative;
+}
+
+/* ── Launch CTA band ── */
+.work-launch {
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.work-launch__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.3rem;
+}
+
+.work-launch__title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  letter-spacing: -0.03em;
+  max-width: 20ch;
+}
+
+@media (max-width: 860px) {
+  .work-focus__inner { grid-template-columns: 1fr; }
+}

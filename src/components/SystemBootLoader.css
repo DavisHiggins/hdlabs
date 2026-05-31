@@ -1,0 +1,128 @@
+.boot {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(70% 50% at 50% 42%, var(--color-navy) 0%, transparent 70%),
+    var(--color-bg);
+  overflow: hidden;
+}
+
+.boot__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(60% 50% at 50% 45%, #000, transparent 80%);
+  -webkit-mask-image: radial-gradient(60% 50% at 50% 45%, #000, transparent 80%);
+  opacity: 0.6;
+}
+
+.boot__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  width: min(420px, 86vw);
+  text-align: center;
+}
+
+.boot__logo {
+  position: relative;
+  display: grid;
+  place-items: center;
+  filter: drop-shadow(0 0 30px rgba(214, 173, 91, 0.3));
+}
+
+.boot__logo-ring {
+  position: absolute;
+  inset: -16px;
+  border: 1px solid var(--color-gold-line);
+  border-top-color: var(--color-gold-bright);
+  border-radius: 50%;
+  animation: bootSpin 1.4s linear infinite;
+}
+
+@keyframes bootSpin {
+  to { transform: rotate(360deg); }
+}
+
+.boot__brand {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.boot__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.boot__step {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--color-faint);
+  opacity: 0.4;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+.boot__step--done {
+  opacity: 1;
+  color: var(--color-muted);
+}
+
+.boot__step--active {
+  color: var(--color-gold);
+}
+
+.boot__step-marker {
+  width: 14px;
+  font-size: 0.75rem;
+  color: var(--color-gold);
+}
+
+.boot__bar {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-line);
+  overflow: hidden;
+  margin-top: 0.3rem;
+}
+
+.boot__bar-fill {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright));
+}
+
+.boot__status {
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot__logo-ring { animation: none; }
+}

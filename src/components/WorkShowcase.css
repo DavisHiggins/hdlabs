@@ -1,0 +1,403 @@
+/* ─── Work Showcase (horizontal pinned) ────────────── */
+.work {
+  position: relative;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.work__head {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--color-white);
+  margin: 0;
+  max-width: 20ch;
+}
+
+.work__intro {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--color-muted);
+  max-width: 56ch;
+  margin: 0;
+}
+
+.work__viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+.work__track {
+  display: flex;
+  gap: 2rem;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  will-change: transform;
+}
+
+/* Project card */
+.work-card {
+  flex-shrink: 0;
+  width: clamp(380px, 38vw, 560px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.8rem;
+  border: 1px solid var(--color-line);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(7, 20, 38, 0.55), rgba(11, 29, 52, 0.35));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, transform 0.4s var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card:hover {
+  border-color: var(--color-gold-line);
+  transform: translateY(-4px);
+}
+
+.work-card--gold:hover {
+  border-color: var(--color-gold);
+}
+
+.work-card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.work-card__number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.work-card__category {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Visual / real screenshot inside premium browser frame */
+.work-card__visual {
+  position: relative;
+  cursor: pointer;
+}
+
+.work-card__visual:focus-visible {
+  outline: 2px solid var(--color-gold-bright);
+  outline-offset: 3px;
+}
+
+/* Status chip in the browser bar */
+.work-card__chip {
+  margin-left: auto;
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-gold);
+  padding: 0.18rem 0.45rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+/* "View case study" hover prompt */
+.work-card__view {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translate(-50%, 8px);
+  z-index: 3;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-gold-bright);
+  border-radius: 100px;
+  padding: 0.3rem 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.work-card__visual:hover .work-card__view {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.work-card__status {
+  position: absolute;
+  top: 44px;
+  right: 10px;
+  z-index: 2;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-gold);
+  padding: 0.25rem 0.55rem;
+  border-radius: 100px;
+}
+
+.work-card__visual .browser-frame__shot {
+  aspect-ratio: 16 / 10;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.work-card:hover .browser-frame__shot {
+  transform: scale(1.03);
+}
+
+.work-card__browser {
+  position: relative;
+  height: 100%;
+  background: rgba(4, 7, 13, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.work-card__browser-bar {
+  display: flex;
+  gap: 5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-line-soft);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.work-card__browser-bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.work-card__browser-content {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.work-card__pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.5;
+}
+
+.work-card__name-mono {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--color-gold-line);
+  border-radius: 6px;
+  background: rgba(4, 7, 13, 0.7);
+}
+
+.work-card__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(214, 173, 91, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.work-card:hover .work-card__glow {
+  opacity: 1;
+}
+
+.work-card--blue .work-card__glow {
+  background: radial-gradient(circle at 30% 30%, rgba(79, 140, 255, 0.15), transparent 60%);
+}
+
+/* Body */
+.work-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.work-card__name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.work-card__arrow {
+  font-size: 1rem;
+  color: var(--color-gold);
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-card__arrow {
+  transform: translate(3px, -3px);
+}
+
+.work-card__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.work-card__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.work-card__row-label {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+.work-card__row p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.work-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 0.4rem;
+}
+
+.work-card__tag {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--color-line-soft);
+  border-radius: 100px;
+}
+
+/* End indicator */
+.work__end {
+  flex-shrink: 0;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.work__end-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+.work__end-line {
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold), transparent);
+}
+
+.work__end-cta {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.work__end-cta:hover {
+  color: var(--color-gold);
+}
+
+/* Progress */
+.work__progress {
+  max-width: var(--max-width);
+  margin: 3rem auto 0;
+  padding: 0 var(--gutter);
+}
+
+.work__progress-track {
+  display: block;
+  height: 2px;
+  background: var(--color-line);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.work__progress-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--color-gold);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 0.2s linear;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .work { padding: 5rem 0; }
+  .work__viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .work__track {
+    transform: none !important;
+    gap: 1.2rem;
+    padding-bottom: 1rem;
+  }
+  .work-card {
+    width: 85vw;
+    max-width: 360px;
+    scroll-snap-align: start;
+  }
+  .work__end { display: none; }
+  .work__progress { display: none; }
+}

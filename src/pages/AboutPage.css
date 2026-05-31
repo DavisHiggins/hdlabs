@@ -1,0 +1,77 @@
+.about-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy {
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy__head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.philosophy__title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+}
+
+.philosophy__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.phil-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 2.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-line);
+  background: linear-gradient(160deg, rgba(13, 33, 58, 0.3), rgba(9, 13, 20, 0.45));
+  transition: border-color 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+
+.phil-card:hover {
+  border-color: var(--color-gold-line);
+  transform: translateY(-4px);
+}
+
+.phil-card__num {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+}
+
+.phil-card__title {
+  font-size: 1.3rem;
+  letter-spacing: -0.01em;
+}
+
+.phil-card__copy {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+.about-watermark {
+  position: absolute;
+  right: -60px;
+  bottom: -60px;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 720px) {
+  .philosophy__grid { grid-template-columns: 1fr; }
+}

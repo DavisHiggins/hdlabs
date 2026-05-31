@@ -1,0 +1,68 @@
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 60vh;
+}
+
+/* Route curtain — sweeps up off the new page on each navigation */
+.ptr-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-bg) 100%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Thin gold leading edge on the bottom of the curtain */
+.ptr-curtain::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold-bright),
+    transparent
+  );
+  opacity: 0.8;
+}
+
+.ptr-curtain__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.ptr-curtain__word {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+/* Gold line wipe across the curtain centre */
+.ptr-curtain__sweep {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform-origin: left;
+  background: linear-gradient(90deg, transparent, var(--color-gold-bright), transparent);
+  box-shadow: 0 0 18px 2px rgba(242, 199, 110, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ptr-curtain {
+    display: none;
+  }
+}

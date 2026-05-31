@@ -1,0 +1,4 @@
+/* Pricing page relies on PricingPreview's internal spacing; page-top clears the header. */
+.pricing-page .pr {
+  padding-top: 2rem;
+}

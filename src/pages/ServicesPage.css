@@ -1,0 +1,4 @@
+/* Services page relies on ServicesSection's internal spacing; page-top clears the header. */
+.services-page .svc {
+  padding-top: 2rem;
+}

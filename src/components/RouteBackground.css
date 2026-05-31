@@ -1,0 +1,147 @@
+.route-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.route-bg__layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* Lab Mode intensifies route motifs slightly */
+body.hdl-lab-mode .route-bg__layer {
+  opacity: 1;
+  filter: saturate(1.2);
+}
+
+/* ── Home: cinematic sweep + faint HDL watermark ── */
+.rb-word--home {
+  position: absolute;
+  right: 4%;
+  bottom: 6%;
+  font-family: var(--font-display);
+  font-size: clamp(8rem, 26vw, 30rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(214, 173, 91, 0.05);
+  line-height: 0.8;
+}
+
+.rb-cine {
+  position: absolute;
+  top: -40%;
+  left: -10%;
+  width: 60%;
+  height: 180%;
+  background: linear-gradient(100deg, transparent, rgba(214, 173, 91, 0.05), transparent);
+  transform: rotate(8deg);
+  animation: rbSweep 16s ease-in-out infinite;
+}
+
+@keyframes rbSweep {
+  0%, 100% { transform: translateX(-10%) rotate(8deg); opacity: 0.5; }
+  50% { transform: translateX(40%) rotate(8deg); opacity: 1; }
+}
+
+/* ── Work: floating frame outlines ── */
+.rb-frame {
+  position: absolute;
+  border: 1px solid rgba(214, 173, 91, 0.1);
+  border-radius: 10px;
+  animation: rbFloat 12s ease-in-out infinite;
+}
+.rb-frame--1 { width: 280px; height: 180px; top: 18%; right: 10%; transform: rotate(-6deg); }
+.rb-frame--2 { width: 220px; height: 150px; top: 50%; left: 8%; transform: rotate(4deg); animation-delay: 2s; }
+.rb-frame--3 { width: 200px; height: 130px; bottom: 12%; right: 24%; transform: rotate(-3deg); animation-delay: 4s; }
+
+@keyframes rbFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -22px; }
+}
+
+/* ── Services: connected system nodes ── */
+.rb-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 16px rgba(214, 173, 91, 0.5);
+  opacity: 0.4;
+  animation: rbPulse 4s ease-in-out infinite;
+}
+.rb-node--1 { top: 26%; left: 18%; }
+.rb-node--2 { top: 40%; right: 22%; animation-delay: 1s; }
+.rb-node--3 { bottom: 30%; left: 30%; animation-delay: 2s; }
+.rb-node--4 { bottom: 22%; right: 16%; animation-delay: 3s; }
+
+.rb-line {
+  position: absolute;
+  background: linear-gradient(90deg, transparent, rgba(214, 173, 91, 0.12), transparent);
+}
+.rb-line--h { top: 33%; left: 0; right: 0; height: 1px; }
+.rb-line--v { left: 50%; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, transparent, rgba(214, 173, 91, 0.1), transparent); }
+
+@keyframes rbPulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.85); }
+  50% { opacity: 0.7; transform: scale(1); }
+}
+
+/* ── About: huge typographic watermark ── */
+.rb-word {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-display);
+  font-size: clamp(10rem, 34vw, 42rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(214, 173, 91, 0.05);
+  line-height: 0.8;
+}
+
+/* ── Pricing: structured columns ── */
+.rb-col {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(214, 173, 91, 0.1), transparent);
+}
+.rb-col--1 { left: 30%; }
+.rb-col--2 { left: 50%; }
+.rb-col--3 { left: 70%; }
+
+/* ── Start: focused spotlight ── */
+.rb-spot {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 60vw;
+  height: 60vw;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(214, 173, 91, 0.08), transparent 60%);
+  filter: blur(40px);
+  animation: rbBreathe 8s ease-in-out infinite;
+}
+
+@keyframes rbBreathe {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  50% { opacity: 0.9; transform: translateX(-50%) scale(1.1); }
+}
+
+/* Lighter on mobile, calmer for reduced motion */
+@media (max-width: 768px) {
+  .rb-frame, .rb-cine, .rb-col { display: none; }
+  .rb-word { font-size: 8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-cine, .rb-frame, .rb-node, .rb-spot { animation: none; }
+}

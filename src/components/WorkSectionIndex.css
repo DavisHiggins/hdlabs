@@ -1,0 +1,77 @@
+.work-index {
+  position: fixed;
+  right: clamp(1rem, 2vw, 2rem);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.work-index__label {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  writing-mode: vertical-rl;
+  margin-bottom: 0.5rem;
+  align-self: flex-end;
+}
+
+.work-index__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-end;
+}
+
+.work-index__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.45;
+  transition: opacity 0.3s ease;
+}
+
+.work-index__item:hover,
+.work-index__item--active {
+  opacity: 1;
+}
+
+.work-index__num {
+  font-family: var(--font-display);
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  color: var(--color-faint);
+}
+
+.work-index__item--active .work-index__num {
+  color: var(--color-gold);
+}
+
+.work-index__name {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.work-index__item--active .work-index__name {
+  color: var(--color-white);
+}
+
+/* The active item gets a small gold tick */
+.work-index__item--active::after {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+@media (max-width: 1240px) {
+  .work-index { display: none; }
+}
