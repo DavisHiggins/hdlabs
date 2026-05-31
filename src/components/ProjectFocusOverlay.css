@@ -58,8 +58,12 @@
   padding: clamp(1.25rem, 3vw, 2rem);
   display: flex;
   align-items: center;
-  background: radial-gradient(80% 100% at 30% 0%, rgba(214, 173, 91, 0.06), transparent 60%);
+  background: radial-gradient(80% 100% at 30% 0%, var(--mood-glow, rgba(214, 173, 91, 0.06)), transparent 60%);
 }
+
+/* Project mood accent on the case-study panel */
+.focus__cat { color: var(--mood-accent, var(--color-gold)); }
+.focus__panel { box-shadow: 0 50px 110px -30px rgba(0, 0, 0, 0.85), 0 0 60px -30px var(--mood-glow, transparent); }
 
 .focus__body {
   display: flex;

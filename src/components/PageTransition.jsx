@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import { routeModuleLabels } from '../data/siteContent.js';
 import HDLogo from './HDLogo.jsx';
 import HomePage from '../pages/HomePage.jsx';
 import WorkPage from '../pages/WorkPage.jsx';
@@ -70,7 +71,10 @@ export default function PageTransition() {
             >
               <HDLogo size={54} decorative priority />
             </motion.div>
-            <span className="ptr-curtain__word">Higgins Digital Labs</span>
+            <span className="ptr-curtain__module">
+              {routeModuleLabels[location.pathname] || 'HDL / MODULE'}
+            </span>
+            <span className="ptr-curtain__word">Loading module…</span>
           </motion.div>
           {/* Thin gold line wipe that sweeps across as the curtain lifts */}
           <motion.span

@@ -3,9 +3,10 @@ import './WorkSectionIndex.css';
 
 const ITEMS = [
   { id: 'engine', label: 'Engine', num: '01' },
-  { id: 'projects', label: 'Projects', num: '02' },
-  { id: 'focus', label: 'Focus', num: '03' },
-  { id: 'launch', label: 'Launch', num: '04' },
+  { id: 'timeline', label: 'Timeline', num: '02' },
+  { id: 'projects', label: 'Projects', num: '03' },
+  { id: 'focus', label: 'Focus', num: '04' },
+  { id: 'launch', label: 'Launch', num: '05' },
 ];
 
 export default function WorkSectionIndex() {

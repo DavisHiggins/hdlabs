@@ -10,6 +10,7 @@ export function InteractionProvider({ children }) {
   const [soundOn, setSoundOn] = useState(false);
   const [labMode, setLabMode] = useState(false);
   const [commandOpen, setCommandOpen] = useState(false);
+  const [manifestoOpen, setManifestoOpen] = useState(false);
 
   // Restore persisted preferences once on mount.
   useEffect(() => {
@@ -49,11 +50,13 @@ export function InteractionProvider({ children }) {
       labMode,
       commandOpen,
       setCommandOpen,
+      manifestoOpen,
+      setManifestoOpen,
       toggleSound,
       toggleLabMode,
       play,
     }),
-    [soundOn, labMode, commandOpen, toggleSound, toggleLabMode, play]
+    [soundOn, labMode, commandOpen, manifestoOpen, toggleSound, toggleLabMode, play]
   );
 
   return (
@@ -72,6 +75,8 @@ export function useInteraction() {
       labMode: false,
       commandOpen: false,
       setCommandOpen: () => {},
+      manifestoOpen: false,
+      setManifestoOpen: () => {},
       toggleSound: () => {},
       toggleLabMode: () => {},
       play: () => {},

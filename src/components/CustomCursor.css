@@ -36,25 +36,26 @@ html.has-custom-cursor [contenteditable='true'] {
   will-change: transform;
 }
 
-/* Small precise dot — follows instantly */
+/* Small precise dot — locked to the pointer. NO transform transition, so its
+   position is exactly the real mouse position every frame (zero lag). */
 .cursor__dot {
-  width: 6px;
-  height: 6px;
-  margin: -3px 0 0 -3px;
+  width: 5px;
+  height: 5px;
+  margin: -2.5px 0 0 -2.5px;
   border-radius: 50%;
   background: var(--color-gold-bright);
-  transition: opacity 0.25s ease, background 0.3s ease, transform 0.12s ease;
+  transition: opacity 0.2s ease, background 0.3s ease;
 }
 
-/* Lerped ring — the expressive element */
+/* Ring — slightly smaller/refined; only size + style transition, never transform */
 .cursor__ring {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  margin: -17px 0 0 -17px;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
   border-radius: 50%;
-  border: 1px solid rgba(248, 247, 242, 0.6);
+  border: 1px solid rgba(248, 247, 242, 0.55);
   transition: width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
     height 0.32s cubic-bezier(0.16, 1, 0.3, 1),
     margin 0.32s cubic-bezier(0.16, 1, 0.3, 1),
@@ -99,9 +100,9 @@ html.has-custom-cursor [contenteditable='true'] {
 /* Links / nav tabs / buttons: gold ring, enlarged with soft glow */
 .cursor--link .cursor__ring,
 .cursor--button .cursor__ring {
-  width: 56px;
-  height: 56px;
-  margin: -28px 0 0 -28px;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
   border-color: var(--color-gold);
   background: rgba(214, 173, 91, 0.1);
   box-shadow: 0 0 22px -6px rgba(214, 173, 91, 0.5);
@@ -113,9 +114,9 @@ html.has-custom-cursor [contenteditable='true'] {
 
 /* Gold / accent context: invert to a bright fill so it stays visible */
 .cursor--gold .cursor__ring {
-  width: 46px;
-  height: 46px;
-  margin: -23px 0 0 -23px;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
   border-color: var(--color-gold-bright);
   background: rgba(242, 199, 110, 0.16);
 }
@@ -124,9 +125,9 @@ html.has-custom-cursor [contenteditable='true'] {
 .cursor--image .cursor__ring,
 .cursor--view .cursor__ring,
 .cursor--project .cursor__ring {
-  width: 76px;
-  height: 76px;
-  margin: -38px 0 0 -38px;
+  width: 64px;
+  height: 64px;
+  margin: -32px 0 0 -32px;
   border-color: var(--color-gold);
   background: var(--color-gold-bright);
 }
@@ -144,12 +145,74 @@ html.has-custom-cursor [contenteditable='true'] {
 
 /* Command palette items: compact gold ring */
 .cursor--command .cursor__ring {
-  width: 40px;
-  height: 40px;
-  margin: -20px 0 0 -20px;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
   border-color: var(--color-gold-bright);
   background: rgba(242, 199, 110, 0.14);
 }
+
+/* Drag (before/after slider): label + grab styling */
+.cursor--drag .cursor__ring {
+  width: 58px;
+  height: 58px;
+  margin: -29px 0 0 -29px;
+  border-color: var(--color-gold);
+  background: rgba(214, 173, 91, 0.16);
+  box-shadow: 0 0 24px -6px rgba(214, 173, 91, 0.5);
+}
+.cursor--drag .cursor__label,
+.cursor--start .cursor__label,
+.cursor--visit .cursor__label,
+.cursor--audio .cursor__label,
+.cursor--lab .cursor__label {
+  opacity: 1;
+  transform: scale(1);
+}
+.cursor--drag .cursor__dot { opacity: 0; }
+
+/* Start: solid premium gold pill feel */
+.cursor--start .cursor__ring {
+  width: 52px;
+  height: 52px;
+  margin: -26px 0 0 -26px;
+  border-color: var(--color-gold-bright);
+  background: var(--color-gold-bright);
+}
+.cursor--start .cursor__label { color: var(--color-bg); }
+.cursor--start .cursor__dot { opacity: 0; }
+
+/* Visit (external links): outlined ring + label */
+.cursor--visit .cursor__ring {
+  width: 50px;
+  height: 50px;
+  margin: -25px 0 0 -25px;
+  border-color: var(--color-gold);
+  background: rgba(214, 173, 91, 0.1);
+}
+.cursor--visit .cursor__dot { opacity: 0; }
+
+/* Audio (sound toggle): blue technical accent */
+.cursor--audio .cursor__ring {
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;
+  border-color: var(--color-blue);
+  background: rgba(79, 140, 255, 0.14);
+}
+.cursor--audio .cursor__label { color: var(--color-white); }
+.cursor--audio .cursor__dot { opacity: 0; }
+
+/* Lab (lab-mode triggers): bright gold glow */
+.cursor--lab .cursor__ring {
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  border-color: var(--color-gold-bright);
+  background: rgba(242, 199, 110, 0.18);
+  box-shadow: 0 0 28px -4px rgba(242, 199, 110, 0.6);
+}
+.cursor--lab .cursor__dot { opacity: 0; }
 
 /* Lab Mode: strengthen the cursor accent globally */
 body.hdl-lab-mode .cursor__ring {

@@ -1,0 +1,54 @@
+.slice {
+  position: relative;
+  width: 100%;
+}
+
+.slice__chip {
+  margin-left: auto;
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  white-space: nowrap;
+}
+
+.slice__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.slice__row {
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  will-change: transform, opacity;
+}
+
+.slice__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 18%, transparent 78%, rgba(4, 7, 13, 0.4));
+}
+
+.slice__label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 3;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: rgba(4, 7, 13, 0.7);
+  border: 1px solid var(--color-gold-line);
+  border-radius: 6px;
+  padding: 0.22rem 0.55rem;
+}

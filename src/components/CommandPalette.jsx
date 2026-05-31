@@ -10,7 +10,7 @@ const EASE = [0.22, 1, 0.36, 1];
 
 export default function CommandPalette() {
   const navigate = useNavigate();
-  const { commandOpen, setCommandOpen, toggleLabMode, toggleSound, play } = useInteraction();
+  const { commandOpen, setCommandOpen, setManifestoOpen, toggleLabMode, toggleSound, play } = useInteraction();
   const [query, setQuery] = useState('');
   const [active, setActive] = useState(0);
   const inputRef = useRef(null);
@@ -83,10 +83,15 @@ export default function CommandPalette() {
       case 'action':
         if (cmd.action === 'toggleLabMode') toggleLabMode();
         if (cmd.action === 'toggleSound') toggleSound();
+        if (cmd.action === 'openManifesto') {
+          close();
+          setManifestoOpen(true);
+        }
         break;
       default:
         break;
     }
+    // Toggles keep the palette open; everything else closes it.
     if (cmd.action !== 'toggleLabMode' && cmd.action !== 'toggleSound') close();
   };
 

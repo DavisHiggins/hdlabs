@@ -1,0 +1,102 @@
+.manifesto-ov {
+  position: fixed;
+  inset: 0;
+  z-index: 11800;
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background:
+    radial-gradient(80% 60% at 50% 30%, rgba(13, 33, 58, 0.6), transparent 70%),
+    rgba(3, 5, 9, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow-y: auto;
+}
+
+.manifesto-ov__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(70% 60% at 50% 40%, #000, transparent 85%);
+  -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, #000, transparent 85%);
+  pointer-events: none;
+}
+
+.manifesto-ov__close {
+  position: fixed;
+  top: clamp(1rem, 3vw, 2rem);
+  right: clamp(1rem, 3vw, 2rem);
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--color-line);
+  background: rgba(4, 7, 13, 0.6);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.manifesto-ov__close:hover { border-color: var(--color-gold); background: rgba(214, 173, 91, 0.12); }
+.manifesto-ov__close span {
+  position: absolute;
+  width: 16px;
+  height: 1.5px;
+  background: var(--color-white);
+}
+.manifesto-ov__close span:first-child { transform: rotate(45deg); }
+.manifesto-ov__close span:last-child { transform: rotate(-45deg); }
+
+.manifesto-ov__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  width: min(820px, 100%);
+}
+
+.manifesto-ov__micro {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.manifesto-ov__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.manifesto-ov__line {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4.5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-white);
+}
+
+.manifesto-ov__index {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.manifesto-ov__note {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+  max-width: 60ch;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-line-soft);
+}

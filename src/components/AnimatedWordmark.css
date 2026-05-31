@@ -1,0 +1,60 @@
+.wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.wordmark__row {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25em;
+  overflow: hidden;
+}
+
+.wordmark__word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1;
+}
+
+.wordmark__word {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 8vw, 6rem);
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--color-white);
+}
+
+.wordmark__word--accent {
+  background: linear-gradient(135deg, var(--color-gold-bright), var(--color-gold) 60%, #b8915c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.wordmark__scan {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(242, 199, 110, 0.28), transparent);
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.wordmark__sub {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wordmark__scan { display: none; }
+}

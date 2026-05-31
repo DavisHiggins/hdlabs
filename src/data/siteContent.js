@@ -13,7 +13,8 @@ export const brand = {
   mainSiteUrl: 'https://higginsd.com',
 };
 
-// The Transformation Engine — four cinematic stages
+// The Transformation Engine — four cinematic stages, each with its own real
+// stage image so the build visibly evolves (Audit → Structure → Interface → Launch).
 export const transformationEngineStages = [
   {
     number: '01',
@@ -21,6 +22,7 @@ export const transformationEngineStages = [
     micro: 'SYSTEM CHECK',
     copy: 'Weak first impressions, unclear structure, and outdated visuals are identified before design begins.',
     tags: ['First impression', 'Navigation', 'Visual trust', 'Mobile clarity'],
+    image: '/transformation1.png',
   },
   {
     number: '02',
@@ -28,6 +30,7 @@ export const transformationEngineStages = [
     micro: 'INTERFACE RECONSTRUCTION',
     copy: 'The page is rebuilt around hierarchy, clarity, conversion paths, and the way real visitors judge a business online.',
     tags: ['Hierarchy', 'CTA paths', 'Content flow', 'Clarity'],
+    image: '/transformation2.png',
   },
   {
     number: '03',
@@ -35,6 +38,7 @@ export const transformationEngineStages = [
     micro: 'DIGITAL PRESENCE UPGRADE',
     copy: 'The brand receives a sharper visual system with stronger spacing, modern UI, responsive layouts, and intentional motion.',
     tags: ['Spacing', 'Responsive UI', 'Motion', 'Brand system'],
+    image: '/transformation3.png',
   },
   {
     number: '04',
@@ -42,7 +46,72 @@ export const transformationEngineStages = [
     micro: 'CLIENT-READY STANDARD',
     copy: 'The site is optimized, domain-ready, mobile-responsive, and prepared to represent the business with confidence.',
     tags: ['Responsive', 'Domain-ready', 'Client-owned source', 'Performance-minded', 'Quote-ready'],
+    image: '/transformation4.png',
   },
+];
+
+// HBG before/after comparison (real stage assets)
+export const hbgCompare = {
+  before: '/transformation1.png',
+  after: '/transformation4.png',
+  beforeLabel: 'Before',
+  afterLabel: 'After',
+};
+
+// Rebuild Timeline — story-driven Work narrative
+export const rebuildTimelineSteps = [
+  { number: '01', title: 'Intake', copy: 'Goals, current site, brand assets, and the real business context are gathered.' },
+  { number: '02', title: 'Audit', copy: 'First impression, structure, and trust signals are assessed against how visitors actually judge a business.' },
+  { number: '03', title: 'Direction', copy: 'A clear visual + structural direction is set before a single section is designed.' },
+  { number: '04', title: 'Interface', copy: 'A premium visual system is applied — spacing, type, motion, and responsive layout.' },
+  { number: '05', title: 'Build', copy: 'Clean, component-driven frontend with performance and SEO baked in.' },
+  { number: '06', title: 'Launch', copy: 'Domain-ready deployment, client-owned source, and a site ready to represent the business.' },
+];
+
+// Services Motion Map — connected system nodes
+export const servicesMap = {
+  nodes: [
+    { id: 'web-dev', label: 'Website Development', x: 50, y: 12, desc: 'Custom multi-page sites with clean structure, polished visuals, and responsive layouts.' },
+    { id: 'brand', label: 'Brand Systems', x: 20, y: 40, desc: 'Typography, color, and spacing built so the business looks consistent and credible.' },
+    { id: 'ux', label: 'Modern UX', x: 50, y: 40, desc: 'Conversion paths and interaction design that guide visitors toward a decision.' },
+    { id: 'conversion', label: 'Conversion Paths', x: 80, y: 40, desc: 'Strategic flows and friction-free contact experiences that turn attention into action.' },
+    { id: 'performance', label: 'Performance Optimization', x: 22, y: 72, desc: 'Cleaner assets, mobile-first layouts, and decisions that keep visitors moving.' },
+    { id: 'domain', label: 'Domain Transition', x: 50, y: 72, desc: 'New sites prepared to replace older ones on the same domain without losing identity.' },
+    { id: 'ownership', label: 'Client-Owned Source', x: 78, y: 72, desc: 'Full source ownership at launch. No vendor lock-in, no recurring platform fees.' },
+    { id: 'seo', label: 'SEO-Ready Structure', x: 50, y: 92, desc: 'Semantic HTML, fast load times, and architecture search engines can index immediately.' },
+  ],
+  edges: [
+    ['web-dev', 'brand'], ['web-dev', 'ux'], ['web-dev', 'conversion'],
+    ['brand', 'performance'], ['ux', 'domain'], ['conversion', 'ownership'],
+    ['performance', 'seo'], ['domain', 'seo'], ['ownership', 'seo'],
+    ['brand', 'ux'], ['ux', 'conversion'],
+  ],
+};
+
+// Labs Manifesto
+export const labsManifesto = [
+  'Clarity before decoration.',
+  'Motion with purpose.',
+  'Performance as a feature.',
+  'Trust as the outcome.',
+];
+
+// Route module-switch labels
+export const routeModuleLabels = {
+  '/': 'HDL / HOME MODULE',
+  '/work': 'HDL / WORK MODULE',
+  '/services': 'HDL / SERVICES MODULE',
+  '/about': 'HDL / ABOUT MODULE',
+  '/pricing': 'HDL / PRICING MODULE',
+  '/start': 'HDL / START MODULE',
+};
+
+// HD Labs OS status lines (used tastefully)
+export const osStatus = [
+  'HDL_OS v5.0',
+  'MOTION ENGINE: ACTIVE',
+  'TRANSFORMATION PIPELINE: READY',
+  'INTERFACE SYSTEM: ONLINE',
 ];
 
 // Command palette (⌘K / Ctrl+K)
@@ -57,6 +126,7 @@ export const commands = [
   { label: 'View Project: Wyatt Bullock Photography', type: 'project', target: 'wyatt-bullock-photography', group: 'Projects' },
   { label: 'View Project: Davis Higgins Portfolio', type: 'project', target: 'davis-higgins-portfolio', group: 'Projects' },
   { label: 'View Project: AI Workflow System', type: 'project', target: 'ai-workflow-system', group: 'Projects' },
+  { label: 'Open Labs Manifesto', type: 'action', action: 'openManifesto', group: 'Actions' },
   { label: 'Toggle Lab Mode', type: 'action', action: 'toggleLabMode', group: 'Actions' },
   { label: 'Toggle Sound', type: 'action', action: 'toggleSound', group: 'Actions' },
   { label: 'Email Davis', type: 'email', email: 'davishiggins@higginsd.com', group: 'Actions' },
@@ -207,6 +277,7 @@ export const projects = [
     status: 'Live',
     image: '/hbgpicture.png',
     href: 'https://higginsbg.com',
+    mood: { accent: '#d6ad5b', glow: 'rgba(214, 173, 91, 0.18)', label: 'Navy / gold luxury' },
   },
   {
     id: 'wyatt-bullock-photography',
@@ -221,6 +292,7 @@ export const projects = [
     status: 'Live',
     image: '/wyattpicture.png',
     href: '#',
+    mood: { accent: '#e8e8ea', glow: 'rgba(232, 232, 234, 0.16)', label: 'Editorial black & white' },
   },
   {
     id: 'davis-higgins-portfolio',
@@ -235,6 +307,7 @@ export const projects = [
     status: 'Live',
     image: '/portfoliopicture.png',
     href: 'https://davishiggins.com',
+    mood: { accent: '#6ea8ff', glow: 'rgba(110, 168, 255, 0.18)', label: 'Blue / gold clean tech' },
   },
   {
     id: 'ai-workflow-system',
@@ -249,6 +322,7 @@ export const projects = [
     status: 'Concept',
     image: '/aiworkflowpicture.png',
     href: '#',
+    mood: { accent: '#4f8cff', glow: 'rgba(79, 140, 255, 0.22)', label: 'Electric technical systems' },
   },
 ];
 

@@ -43,6 +43,10 @@ export default function ProjectFocusOverlay({ project, onClose }) {
         >
           <motion.div
             className="focus__panel"
+            style={{
+              '--mood-accent': project.mood?.accent,
+              '--mood-glow': project.mood?.glow,
+            }}
             initial={{ opacity: 0, y: 28, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}

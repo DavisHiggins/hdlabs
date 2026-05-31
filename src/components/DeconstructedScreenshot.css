@@ -1,0 +1,94 @@
+.decon {
+  position: relative;
+  width: 100%;
+}
+
+.decon--interactive { cursor: pointer; }
+
+.decon__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  perspective: 1000px;
+}
+
+.decon__layer {
+  position: relative;
+  flex: 1;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+  will-change: transform;
+}
+
+.decon__tag {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-bg);
+  background: var(--color-gold-bright);
+  border-radius: 4px;
+  padding: 0.1rem 0.4rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+/* On hover, fan the layers apart in depth */
+.decon:hover .decon__layer {
+  box-shadow: 0 -10px 24px -12px rgba(0, 0, 0, 0.7);
+}
+.decon:hover .decon__layer {
+  transform: translateZ(calc(var(--i) * 14px))
+    translateY(calc((var(--i) - (var(--n) / 2)) * -3px));
+}
+.decon:hover .decon__tag { opacity: 1; }
+
+.decon__overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 20%, transparent 75%, rgba(4, 7, 13, 0.4) 100%);
+}
+
+.decon__label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 3;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: rgba(4, 7, 13, 0.7);
+  border: 1px solid var(--color-gold-line);
+  border-radius: 6px;
+  padding: 0.22rem 0.55rem;
+}
+
+.decon--interactive:focus-visible {
+  outline: 2px solid var(--color-gold-bright);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decon:hover .decon__layer { transform: none; box-shadow: none; }
+}
+
+/* Touch: no depth fan, keep flat */
+@media (hover: none) {
+  .decon:hover .decon__layer { transform: none; box-shadow: none; }
+  .decon__tag { display: none; }
+}

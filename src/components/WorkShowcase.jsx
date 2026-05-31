@@ -22,18 +22,19 @@ export default function WorkShowcase({ onOpen }) {
     if (!section || !track) return;
 
     const ctx = gsap.context(() => {
-      const totalWidth = track.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      const distance = totalWidth - viewportWidth + 80;
-
       gsap.to(track, {
-        x: -distance,
+        // Recalculated on refresh so the swipe distance matches the real layout.
+        x: () => -(track.scrollWidth - window.innerWidth + 80),
         ease: 'none',
         scrollTrigger: {
           trigger: section,
+          // Section is exactly one centered viewport, so pinning at top/top means
+          // the head + cards + progress are fully in frame before the swipe starts.
           start: 'top top',
-          end: `+=${distance + 200}`,
+          end: () => '+=' + (track.scrollWidth - window.innerWidth + 280),
           pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
           scrub: 0.6,
           invalidateOnRefresh: true,
           onUpdate: (self) => {
@@ -43,6 +44,21 @@ export default function WorkShowcase({ onOpen }) {
           },
         },
       });
+
+      // Refresh once the project screenshots decode so pin start/end are correct.
+      const imgs = section.querySelectorAll('.browser-frame__shot');
+      let pending = imgs.length;
+      const onLoad = () => {
+        pending -= 1;
+        if (pending <= 0) ScrollTrigger.refresh();
+      };
+      imgs.forEach((img) => {
+        if (img.complete) onLoad();
+        else img.addEventListener('load', onLoad, { once: true });
+      });
+      const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 400);
+
+      return () => clearTimeout(refreshTimer);
     }, section);
 
     return () => ctx.revert();
@@ -61,7 +77,14 @@ export default function WorkShowcase({ onOpen }) {
       <div className="work__viewport">
         <div className="work__track" ref={trackRef}>
           {projects.map((project) => (
-            <article key={project.id} className={`work-card work-card--${project.tint}`}>
+            <article
+              key={project.id}
+              className={`work-card work-card--${project.tint}`}
+              style={{
+                '--mood-accent': project.mood?.accent,
+                '--mood-glow': project.mood?.glow,
+              }}
+            >
               <header className="work-card__head">
                 <span className="work-card__number">{project.number}</span>
                 <span className="work-card__category">{project.category}</span>

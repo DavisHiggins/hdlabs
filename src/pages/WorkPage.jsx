@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import TransformationEngine from '../components/TransformationEngine.jsx';
+import RebuildTimeline from '../components/RebuildTimeline.jsx';
 import WorkShowcase from '../components/WorkShowcase.jsx';
 import WorkSectionIndex from '../components/WorkSectionIndex.jsx';
 import ProjectFocusOverlay from '../components/ProjectFocusOverlay.jsx';
-import ProjectScreenshotFrame from '../components/ProjectScreenshotFrame.jsx';
-import { projects } from '../data/siteContent.js';
+import DeconstructedScreenshot from '../components/DeconstructedScreenshot.jsx';
+import BeforeAfterSlider from '../components/BeforeAfterSlider.jsx';
+import SlicedScreenshotReveal from '../components/SlicedScreenshotReveal.jsx';
+import { projects, hbgCompare } from '../data/siteContent.js';
 import './WorkPage.css';
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -26,7 +29,7 @@ export default function WorkPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
         >
-          <span className="section-label">Work</span>
+          <span className="section-label">Work · HDL / WORK MODULE</span>
           <h1 className="page-head__title">
             Work that makes the business look as strong online as it does in person.
           </h1>
@@ -40,54 +43,80 @@ export default function WorkPage() {
       {/* 01 — The Transformation Engine */}
       <TransformationEngine variant="full" />
 
-      {/* 02 — Projects */}
+      {/* 02 — Rebuild Timeline */}
+      <RebuildTimeline />
+
+      {/* 03 — Projects */}
       <section id="projects">
         <WorkShowcase onOpen={setFocus} />
       </section>
 
-      {/* 03 — Focus: featured case study */}
+      {/* 04 — Focus: deconstruction + before/after + sliced reveal */}
       <section id="focus" className="work-focus section">
-        <div className="page-shell work-focus__inner">
-          <div className="work-focus__copy">
+        <div className="page-shell">
+          <div className="work-focus__head">
             <span className="section-label">Project Focus</span>
             <h2 className="work-focus__title">
-              Open any build as a <span className="text-gold">cinematic case study.</span>
+              Structure first. <span className="text-gold">Surface second.</span>
             </h2>
             <p className="work-focus__text">
-              Every project card opens a focused preview — the real screenshot, the problem,
-              what was built, and the outcome. Click the featured build to try it.
+              Hover the build to see its interface layers separate, drag the slider to
+              compare the rebuild, and scroll to watch the launch screen reassemble.
             </p>
-            <button
-              type="button"
-              className="btn btn-ghost"
-              onClick={() => setFocus(featured)}
-              data-cursor="button"
-            >
-              Open Case Study
-            </button>
           </div>
 
-          <div className="work-focus__visual">
-            <ProjectScreenshotFrame
-              src={featured.image}
-              alt={`${featured.name} — ${featured.category}`}
-              url={featured.href?.replace('https://', '') || 'higgins-digital-labs'}
-              chip="CASE STUDY"
-              label={featured.name}
-              onClick={() => setFocus(featured)}
+          <div className="work-focus__grid">
+            <div className="work-focus__col">
+              <span className="work-focus__cap">Interface Deconstruction</span>
+              <DeconstructedScreenshot
+                src={featured.image}
+                alt={`${featured.name} — interface layers`}
+                url={featured.href?.replace('https://', '') || 'higginsbg.com'}
+                label={featured.name}
+                onClick={() => setFocus(featured)}
+              />
+              <button
+                type="button"
+                className="btn btn-ghost work-focus__open"
+                onClick={() => setFocus(featured)}
+                data-cursor="button"
+              >
+                Open Case Study
+              </button>
+            </div>
+
+            <div className="work-focus__col">
+              <span className="work-focus__cap">Before → After · Higgins Building Group</span>
+              <BeforeAfterSlider
+                before={hbgCompare.before}
+                after={hbgCompare.after}
+                beforeLabel={hbgCompare.beforeLabel}
+                afterLabel={hbgCompare.afterLabel}
+                alt="Higgins Building Group rebuild"
+              />
+            </div>
+          </div>
+
+          <div className="work-focus__reveal">
+            <span className="work-focus__cap">Launch Render</span>
+            <SlicedScreenshotReveal
+              src={hbgCompare.after}
+              alt="Higgins Building Group launch render"
+              url="higginsbg.com"
+              label="Launch — client-ready"
             />
           </div>
         </div>
       </section>
 
-      {/* 04 — Launch CTA */}
+      {/* 05 — Launch CTA */}
       <section id="launch" className="work-launch section">
         <div className="page-shell work-launch__inner">
           <span className="engine__micro">Client-ready standard</span>
           <h2 className="work-launch__title">
             From audit to launch — <span className="text-gold">built to represent the business.</span>
           </h2>
-          <Link to="/start" className="btn btn-primary no-motion-cta" data-cursor="button" data-no-magnetic="true">
+          <Link to="/start" className="btn btn-primary no-motion-cta" data-cursor="start" data-no-magnetic="true">
             Start a Project
           </Link>
         </div>

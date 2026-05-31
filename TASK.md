@@ -1,1109 +1,909 @@
-# TASK.md — Higgins Digital Labs Phase 4: Cinematic Showcase Replacement
-
-## Objective
-
-This is now the most important phase of the Higgins Digital Labs site.
-
-The current site includes a section titled:
-
-```txt
-Real builds, floating in 3D space.
 ```
-
-This section currently appears on both the Home tab and the Work tab. It needs to be removed from both places and replaced with something significantly more impressive, more cinematic, more immersive, and more aligned with the elite interaction quality of the Lando Norris website.
-
-Do not copy the Lando Norris website directly. Use it only as inspiration for:
-
-- Cinematic interaction quality.
-    
-- Bold visual storytelling.
-    
-- High-end page motion.
-    
-- Immersive scene transitions.
-    
-- Layered content reveals.
-    
-- Premium dark UI.
-    
-- Sharp brand-specific motion.
-    
-- App-like interaction design.
-    
-
-This phase should make Higgins Digital Labs feel less like a nice website and more like an interactive digital experience.
-
-Also remove the hover motion from the **Start a Project** button. It should still look premium, but it should not move, magnetize, jump, pull, tilt, or shift when hovered.
-
----
-
-# Primary Required Changes
-
-## 1. Remove the “Real builds, floating in 3D space.” Section
-
-Remove this section from:
-
-```txt
-Home tab
-Work tab
-```
-
-Remove:
-
-- The heading “Real builds, floating in 3D space.”
-    
-- Any matching subtitle/copy.
-    
-- The floating mockup section attached to it.
-    
-- Any duplicate use of that section on the Work page.
-    
-- Any empty spacing left behind.
-    
-- Any unused component imports if the component becomes unused.
-    
-- Any unused CSS related only to that removed section.
-    
-
-Do not remove project screenshots globally. The real screenshots should still be used in the Work page, but in a more impressive new way.
-
-Do not break the build.
-
----
-
-## 2. Replace It With a Better Cinematic Feature
-
-Replace the removed section with a new high-end feature called:
-
-```txt
-The Transformation Engine
-```
-
-This should become one of the most impressive parts of the site.
-
-It should appear on:
-
-```txt
-Home page: as a preview/teaser
-Work page: as the full cinematic experience
-```
-
-The Home version should be shorter and more atmospheric.
-
-The Work version should be the full, immersive interactive showcase.
-
----
-
-# New Feature: The Transformation Engine
-
-## Concept
-
-The Transformation Engine should visually show how Higgins Digital turns outdated or ordinary websites into premium digital systems.
-
-It should feel like an interactive machine, cinematic workflow, or digital command center.
-
-The user should feel like they are watching a business’s digital presence being rebuilt in real time.
-
-Core idea:
-
-```txt
-Input: outdated web presence
-Process: structure, design, motion, performance
-Output: premium digital system
-```
-
-This should be more impressive than floating screenshots.
-
-It should combine:
-
-- Real project screenshots.
-    
-- Animated interface panels.
-    
-- Gold diagnostic lines.
-    
-- Stage-based transformation.
-    
-- Scroll-triggered reveals.
-    
-- Motion synced to user progression.
-    
-- Premium before/after energy.
-    
-- Dark cinematic visual design.
-    
-- HD Labs branding.
-    
-
----
-
-# Transformation Engine Content
-
-Use these four stages:
-
-## 01 — Audit
-
-```txt
-Weak first impressions, unclear structure, and outdated visuals are identified before design begins.
-```
-
-Visual idea:
-
-- Screenshot is scanned by a gold diagnostic line.
-    
-- Small labels appear:
-    
-    - First impression
-        
-    - Navigation
-        
-    - Visual trust
-        
-    - Mobile clarity
-        
-- Red/amber/gold issue markers may appear subtly.
-    
-- Avoid ugly warning UI. Keep it premium.
-    
-
-## 02 — Structure
-
-```txt
-The page is rebuilt around hierarchy, clarity, conversion paths, and the way real visitors judge a business online.
-```
-
-Visual idea:
-
-- Wireframe blocks align into place.
-    
-- Navigation and CTA structure snap into a cleaner layout.
-    
-- Thin lines connect sections.
-    
-- Content cards move from scattered to organized.
-    
-
-## 03 — Interface
-
-```txt
-The brand receives a sharper visual system with stronger spacing, modern UI, responsive layouts, and intentional motion.
-```
-
-Visual idea:
-
-- Dark premium interface panels slide in.
-    
-- Screenshot shifts into a refined browser frame.
-    
-- Gold accents draw across the design.
-    
-- HD logo appears as a quality seal/watermark.
-    
-
-## 04 — Launch
-
-```txt
-The site is optimized, domain-ready, mobile-responsive, and prepared to represent the business with confidence.
-```
-
-Visual idea:
-
-- Final screenshot locks into a premium frame.
-    
-- Status indicators light up:
-    
-    - Responsive
-        
-    - Domain-ready
-        
-    - Client-owned source
-        
-    - Performance-minded
-        
-    - Quote-ready
-        
-- A final gold line completes the sequence.
-    
-
----
-
-# Home Page Implementation
-
-On the Home page, remove the old “Real builds, floating in 3D space.” section and replace it with a teaser version:
-
-```txt
-The Transformation Engine
-```
-
-Suggested headline:
-
-```txt
-A cinematic system for turning ordinary websites into premium digital presence.
-```
-
-Suggested copy:
-
-```txt
-Higgins Digital Labs visualizes the process behind sharper structure, stronger interfaces, and high-performance web systems.
-```
-
-CTA:
-
-```txt
-View the Engine
-```
-
-Clicking the CTA should navigate to the Work page, ideally to the full Transformation Engine section if possible.
-
-Home teaser visual:
-
-- Compact version of the engine.
-    
-- 3 or 4 layered panels.
-    
-- Animated gold scan line.
-    
-- Small HD Labs badge.
-    
-- One real project screenshot preview if available.
-    
-- Subtle idle animation.
-    
-- No generic floating mockup cards.
-    
-
-This should feel like a preview of a much larger system.
-
----
-
-# Work Page Implementation
-
-On the Work page, remove the old “Real builds, floating in 3D space.” section and replace it with the full Transformation Engine.
-
-This should be the most impressive section of the Work page.
-
-## Required Work Page Layout
-
-Create a cinematic section:
-
-```txt
-The Transformation Engine
-```
-
-Subtitle:
-
-```txt
-A scroll-driven look at how Higgins Digital Labs turns outdated web presence into sharper, faster, more credible digital systems.
-```
-
-The section should include:
-
-- Sticky/pinned stage navigation on desktop.
-    
-- Four stages: Audit, Structure, Interface, Launch.
-    
-- Large animated visual panel.
-    
-- Real project screenshot integration.
-    
-- Stage progress indicator.
-    
-- HD logo or HD Labs marker.
-    
-- Gold diagnostic motion.
-    
-- Strong dark navy/gold visual system.
-    
-- Smooth transitions between stages.
-    
-- Mobile fallback that stacks stages cleanly.
-    
-
----
-
-# Transformation Engine Interaction Requirements
-
-## Desktop
-
-Use GSAP ScrollTrigger or Framer Motion depending on current architecture.
-
-Preferred:
-
-- Use GSAP ScrollTrigger for scroll-linked stage progression.
-    
-- Pin the engine section while the four stages progress.
-    
-- Update active stage based on scroll progress.
-    
-- Animate visual layers per stage.
-    
-- Move diagnostic lines, panels, labels, and screenshot frames.
-    
-- Keep interaction smooth and not overwhelming.
-    
-
-Desktop behavior:
-
-- Left side: stage list / progress.
-    
-- Right side: animated transformation visual.
-    
-- Or center: massive visual with stage info overlay.
-    
-- Active stage should be obvious.
-    
-- Progress should feel intentional.
-    
-- The section should not trap the user for too long.
-    
-
-## Mobile
-
-Do not pin aggressively on mobile.
-
-Mobile behavior:
-
-- Stack stages vertically.
-    
-- Each stage has its own visual.
-    
-- Keep animations lighter.
-    
-- No horizontal overflow.
-    
-- No scroll trap.
-    
-- Maintain premium spacing.
-    
-
----
-
-# Visual Direction
-
-This should look like a cinematic digital reconstruction system.
-
-Use visual elements like:
-
-- Browser frames.
-    
-- Screenshot slices.
-    
-- Wireframe blocks.
-    
-- Diagnostic labels.
-    
-- Thin gold scan lines.
-    
-- Moving grid lines.
-    
-- HD logo watermark.
-    
-- Status chips.
-    
-- Animated progress rail.
-    
-- Subtle glass panels.
-    
-- Transforming layout blocks.
-    
-- Gold completion line.
-    
-- Deep navy background.
-    
-- Soft reflections.
-    
-- High-contrast typography.
-    
-
-Avoid:
-
-- Generic floating cards.
-    
-- Basic screenshot carousel.
-    
-- Cheap neon overload.
-    
-- Random animations.
-    
-- Overly playful movement.
-    
-- Fake-looking metrics.
-    
-- Large empty gaps.
-    
-- Clutter.
-    
-
----
-
-# New Component Requirements
-
-Create or update components as needed:
-
-```txt
-src/components/TransformationEngine.jsx
-src/components/TransformationEngine.css
-```
-
-Optional supporting components:
-
-```txt
-src/components/EngineStageVisual.jsx
-src/components/EngineStageVisual.css
-src/components/DiagnosticScan.jsx
-src/components/DiagnosticScan.css
-src/components/StatusChips.jsx
-src/components/StatusChips.css
-```
-
-If the old floating mockup component is now unused, either remove it or leave it only if used elsewhere. Do not keep unused imports.
-
----
-
-# Data Requirement
-
-Update or create data in:
-
-```txt
-src/data/siteContent.js
-```
-
-Add:
-
-```js
-export const transformationEngineStages = [
-  {
-    number: "01",
-    title: "Audit",
-    copy: "Weak first impressions, unclear structure, and outdated visuals are identified before design begins.",
-    tags: ["First impression", "Navigation", "Visual trust", "Mobile clarity"]
-  },
-  {
-    number: "02",
-    title: "Structure",
-    copy: "The page is rebuilt around hierarchy, clarity, conversion paths, and the way real visitors judge a business online.",
-    tags: ["Hierarchy", "CTA paths", "Content flow", "Clarity"]
-  },
-  {
-    number: "03",
-    title: "Interface",
-    copy: "The brand receives a sharper visual system with stronger spacing, modern UI, responsive layouts, and intentional motion.",
-    tags: ["Spacing", "Responsive UI", "Motion", "Brand system"]
-  },
-  {
-    number: "04",
-    title: "Launch",
-    copy: "The site is optimized, domain-ready, mobile-responsive, and prepared to represent the business with confidence.",
-    tags: ["Responsive", "Domain-ready", "Client-owned source", "Performance-minded"]
-  }
-];
-```
-
-Use project screenshot data already available in the project. Prefer screenshots from:
-
-```txt
-Higgins Building Group
-Wyatt Bullock Photography
-Davis Higgins Portfolio
-AI Workflow System
-```
-
-The engine can rotate between screenshots or use one primary screenshot with layered interface overlays.
-
----
-
-# More Incredible UI/UX Features to Add in This Phase
-
-In addition to replacing the floating builds section, add the following upgrades.
-
----
-
-## A. Cinematic Project Focus Mode
-
-On the Work page, project cards/screenshots should support a premium focus mode.
-
-When a user clicks a project card or screenshot:
-
-- Open a full-screen or large cinematic overlay.
-    
-- Use the project screenshot prominently.
-    
-- Show project details:
-    
-    - Project name
-        
-    - Category
-        
-    - Problem
-        
-    - Built
-        
-    - Outcome
-        
-    - Status
-        
-- Add a close button.
-    
-- Use Framer Motion transition.
-    
-- Dark glass background.
-    
-- HD Labs branding.
-    
-- Cursor should show `VIEW` over clickable screenshots.
-    
-- Escape key should close the overlay.
-    
-- Overlay should not break mobile.
-    
-
-This should feel like opening a premium case-study preview.
-
-Do not create fake metrics.
-
-Component suggestion:
-
-```txt
-src/components/ProjectFocusOverlay.jsx
-src/components/ProjectFocusOverlay.css
+TASK.md — Higgins Digital Labs Phase 5: Cinematic Systems Upgrade## ObjectiveThis is the next major evolution of Higgins Digital Labs.The current site is already strong, but it still needs significantly more detail, better storytelling, more unique animations, and more “elite interactive site” implementation quality. The biggest current weakness is that the Transformation Engine does not actually feel like a real transformation system yet. It currently feels more like a styled section than a living reconstruction experience.This phase must upgrade Higgins Digital Labs into a more immersive, more original, more premium, more cinematic digital product.The site should remain original to Higgins Digital Labs, but the execution quality, motion ambition, scene transitions, and immersive interaction level should move noticeably closer to what makes a site like the Lando Norris website feel special.Do **not** copy the Lando Norris website directly. Use it only as inspiration for:- cinematic scene progression- sharper visual storytelling- stronger route transitions- layered motion- immersive section reveals- premium micro-interactions- interface systems that feel alive- a site that feels more like an experience than a normal websiteThis phase must implement **all** of the following ideas:1. Transformation Engine visual changes per stage  3. Before/after slider for HBG  4. Rebuild Timeline  5. Interface Deconstruction hover effects  6. Cinematic project open animation  8. HD Labs OS aesthetic  9. Route transition module switch behavior  11. Project-specific color moods  12. Services motion map  15. Scene-based Home page  16. Animated Higgins Digital Labs wordmark interactions  18. Scroll-synced screenshot slicing  20. Labs Manifesto micro-page or overlayIn addition, this phase must also fix the custom cursor lag:- The custom cursor currently trails behind too much.- It must be made as close to instant and in-line with the user’s real mouse position as possible.- Cursor movement should feel tight, responsive, and premium.- It should not feel floaty or delayed.---## Core GoalsBy the end of this phase, Higgins Digital Labs should feel like:- a premium experimental product- an interactive digital operating system for website transformation- a more cinematic experience- a clearer representation of how Higgins Digital thinks- a site with stronger page identity and more memorable motion systemsThis phase should especially improve:- the Transformation Engine- the Work page- the Home page- the Services page- overall storytelling- micro-interaction quality- route changes- UI detail density- visual variety across pages---## Existing Architecture to PreserveDo **not** break the current foundation unless replacing it with something clearly better and stable.Preserve and build on:- current multi-page/tab page architecture- Higgins Digital Labs naming- HD logo usage- current routing structure- existing page transitions (upgrade them, do not break them)- custom cursor system (improve it)- command palette if it already exists- sound toggle if it already exists- loading sequence if it already exists- route-specific backgrounds if they already exist- real project screenshots- mobile responsiveness- reduced-motion safety- Vercel build compatibility---## Technical StackUse the existing app architecture and libraries already in the project.Expected stack:- React- Vite- React Router or current routing solution- Framer Motion- GSAP- ScrollTrigger- Lenis- CSS / CSS Modules / current styling systemDo not add large unnecessary dependencies.If a helper utility is needed, keep it lightweight and easy to maintain.---# Part 1 — Transformation Engine Must Actually Transform## ProblemThe current Transformation Engine is not convincing enough because it visually shows too much of the same thing and does not clearly evolve from weak/original website to structured/rebuilt website to final polished output.## GoalRebuild the Transformation Engine so that each of the four stages has a clearly different visual state and the progression feels real.The user should feel like they are watching a website get reconstructed.---## Required Stages### Stage 01 — AuditShow the original / outdated / weaker site state.This stage should feel diagnostic.Content idea:- weaker first impression- unclear hierarchy- outdated visuals- mobile clarity issues- unclear CTA placementVisual behavior:- show the older/original HBG site state- a gold scan line passes across the interface- diagnostic pins/labels appear around the layout- certain areas are subtly highlighted as weak points- layout feels flatter / less refined- screenshot may be slightly dimmer or more neutral than later stages- do not put large info text inside the image itself unless the site already overlays labels externally### Stage 02 — StructureShow the site being rebuilt into a stronger layout.Visual behavior:- the old interface transitions into a wireframe / layout-structure system- sections break into blocks- navigation, hero, service areas, CTA regions, and page flow become clearer- thin gold / white linework organizes the layout- cards and blocks align into place- this should feel like the architecture of the page is being corrected### Stage 03 — InterfaceShow the wireframe / structure becoming a premium visual interface.Visual behavior:- color and visual polish fade in- typography becomes stronger- spacing becomes cleaner- refined browser frame appears- modern UI details come in- premium dark / gold / navy system feels more intentional- motion and polish appear- this should feel like the “design system being applied”### Stage 04 — LaunchShow the final polished HBG website.Visual behavior:- the final site should look finished, premium, and production-ready- status indicators can light up around the page externally or in overlay UI:  - responsive  - domain-ready  - client-owned source  - performance-minded  - quote-ready- final image sits in a premium browser frame- final line/scan/progress indicator completes- the stage should clearly feel like the finished product---## Required ImplementationCreate or upgrade a transformation engine component:- `src/components/TransformationEngine.jsx`- `src/components/TransformationEngine.css`Use real project assets for HBG stage visuals.The engine should support:- stage-aware visuals- different visual state per stage- scroll progression or controlled staged progression- desktop cinematic mode- mobile stacked modeUse data-driven structure if possible.Add to `src/data/siteContent.js` or a dedicated transformation data file:```jsexport const transformationEngineStages = [  {    number: "01",    title: "Audit",    description: "Weak first impressions, unclear structure, and outdated visuals are identified before design begins."  },  {    number: "02",    title: "Structure",    description: "The page is rebuilt around hierarchy, clarity, conversion paths, and the way real visitors judge a business online."  },  {    number: "03",    title: "Interface",    description: "The brand receives a sharper visual system with stronger spacing, modern UI, responsive layouts, and intentional motion."  },  {    number: "04",    title: "Launch",    description: "The site is optimized, domain-ready, mobile-responsive, and prepared to represent the business with confidence."  }];
 ```
 
 ---
 
-## B. Cinematic Page Transition Upgrade
+# Part 2 — Before/After Slider for HBG
 
-Upgrade page transitions so route changes feel more premium.
+## Goal
 
-Current page transitions may already exist. Improve them without breaking routing.
+Add a true before/after comparison module for the Higgins Building Group project.
 
-Add one or more:
+This should be one of the clearest value-demonstration tools on the site.
 
-- Thin gold line wipe.
-    
-- HD logo pulse.
-    
-- Brief “Higgins Digital Labs” micro-label.
-    
-- Directional blur/slide.
-    
-- Background darkens slightly during transition.
-    
+## Required Behavior
 
-Rules:
+- vertical draggable slider
+- left side = before
+- right side = after
+- gold divider handle
+- clear premium styling
+- cursor changes to `DRAG` over the slider
+- smooth drag behavior
+- mobile fallback:
+    - either drag still works well
+    - or a clean Before / After toggle
 
-- Keep transition fast.
-    
-- Do not create blank-page bugs.
-    
-- Do not make navigation feel slow.
-    
-- Respect reduced motion.
-    
+## Placement
 
----
+Place this in the Work page, likely near the HBG project or within the HBG project focus experience.
 
-## C. Interactive Section Index
+## Suggested Component
 
-Add a page-specific mini section index to the Work page and optionally the Home page.
+- `src/components/BeforeAfterSlider.jsx`
+- `src/components/BeforeAfterSlider.css`
 
-For Work page:
-
-```txt
-HDL / WORK
-01 — Engine
-02 — Projects
-03 — Focus
-04 — Launch
-```
-
-Clicking each item should scroll to the section within the page.
-
-This is allowed even though main tabs are pages. The main nav should remain page-based; this section index is only internal page navigation.
-
-Make it subtle and premium.
+Use real HBG before and after images if available.
 
 ---
 
-## D. Engine Status Rail
+# Part 3 — Rebuild Timeline
 
-Inside the Transformation Engine, add a status rail showing progress:
+## Goal
 
-```txt
-AUDIT → STRUCTURE → INTERFACE → LAUNCH
-```
+Replace or supplement generic project presentation with a more cinematic, story-driven “Rebuild Timeline.”
 
-Requirements:
+This should make Work feel more like a transformation narrative instead of a gallery.
 
-- Gold progress line fills as the user moves through stages.
-    
-- Active stage glows subtly.
-    
-- Completed stages show a small active marker.
-    
-- On mobile, display as horizontal mini rail above cards.
-    
+## Required Steps
+
+Timeline content:
+
+1. Intake
+2. Audit
+3. Direction
+4. Interface
+5. Build
+6. Launch
+
+## Visual Behavior
+
+- a vertical or diagonal gold timeline
+- each stage activates when scrolled into view
+- supporting visual fragments appear around the timeline
+- cards or panels slide in with motion
+- thin line connectors
+- system-style labels
+- status lighting / activation cues
+- HD Labs micro labels
+
+## Placement
+
+Work page.
+
+## Suggested Component
+
+- `src/components/RebuildTimeline.jsx`
+- `src/components/RebuildTimeline.css`
 
 ---
 
-## E. HD Labs Microcopy Layer
+# Part 4 — Interface Deconstruction Hover Effects
 
-Add small premium microcopy labels throughout the engine and work page.
+## Goal
 
-Examples:
+When hovering a project screenshot/card, visually separate the interface into layers.
 
-```txt
-HDL PROCESS
-INTERFACE RECONSTRUCTION
-DIGITAL PRESENCE UPGRADE
-SYSTEM CHECK
-CLIENT-READY STANDARD
-```
+This should show that Higgins Digital understands structure, not just surface styling.
 
-These should appear as tiny labels, chips, or corner markers.
+## Required Behavior
+
+For important project visuals:
+
+- background layer
+- nav layer
+- hero layer
+- content layer
+- CTA layer
+- footer layer
+
+On hover:
+
+- layers subtly separate in depth
+- slight 3D translation / layered shift
+- subtle light change
+- cursor should show `VIEW`
+- effect should remain premium and not excessive
+
+Do this primarily for Work page project cards and/or screenshots.
+
+## Suggested Component / Utility
+
+- `src/components/DeconstructedScreenshot.jsx`
+- `src/components/DeconstructedScreenshot.css`
+
+If reusable, wrap project screenshot presentations in this system.
+
+---
+
+# Part 5 — Cinematic Project Open Animation
+
+## Goal
+
+Project opening should feel far more premium than a normal modal.
+
+## Required Behavior
+
+When user clicks a project:
+
+- project screenshot/card expands from its place into a cinematic overlay
+- overlay darkens the background
+- screenshot transitions into a featured hero visual
+- gold border / line can draw around the presentation
+- project details appear in choreographed motion
+- close animation should reverse cleanly
+- Escape closes overlay
+- mobile must remain usable
+
+## Required Project Detail Content
+
+For each project:
+
+- Project name
+- Category
+- Problem
+- Built
+- Outcome
+- Status
+
+Do not invent fake metrics.
+
+## Suggested Component
+
+- `src/components/ProjectFocusOverlay.jsx`
+- `src/components/ProjectFocusOverlay.css`
+
+---
+
+# Part 6 — HD Labs OS Aesthetic
+
+## Goal
+
+Make the site feel more like a digital operating system for web transformation.
+
+This is not meant to become cheesy or overloaded. It should be subtle, premium, and consistent.
+
+## Required UI Language / Micro Labels
+
+Use micro labels like:
+
+- `HDL_OS v5.0`
+- `MOTION ENGINE: ACTIVE`
+- `TRANSFORMATION PIPELINE: READY`
+- `INTERFACE SYSTEM: ONLINE`
+- `CLIENT-READY STANDARD`
+- `CURRENT MODULE`
+- `SYSTEM CHECK`
+
+## Placement
+
+Use selectively in:
+
+- Transformation Engine
+- Work page
+- route transitions
+- Home scenes
+- Services motion map
+- command palette hints if useful
 
 Do not overuse them.
 
----
+## Implementation
 
-## F. Screenshot Treatment Upgrade
-
-All project screenshots should look more premium.
-
-Add:
-
-- Browser chrome/frame.
-    
-- Reflective glass edge.
-    
-- Subtle shadow.
-    
-- Gold hairline border.
-    
-- Soft overlay gradient.
-    
-- Better object-fit/object-position.
-    
-- Hover focus state.
-    
-- Optional small status chip:
-    
-    - LIVE BUILD
-        
-    - CASE STUDY
-        
-    - CLIENT WORK
-        
-    - LAB FEATURE
-        
-
-Do not distort screenshots.
+Work these into the visual system through small microcopy labels, chips, corners, status rows, etc.
 
 ---
 
-## G. Button Interaction Cleanup
+# Part 7 — Route Transition Module Switch Behavior
 
-Remove hover motion from the **Start a Project** button.
+## Goal
 
-This applies to all Start a Project buttons:
+When switching pages/tabs, route changes should feel like switching modules in a system.
 
-- Header CTA.
-    
-- Home CTA.
-    
-- Work CTA.
-    
-- Pricing CTA.
-    
-- Start page main CTA.
-    
+## Required Behavior
 
-The Start a Project button may still have:
+Instead of only a fade/slide, add a module-switch feel:
 
-- Color transition.
-    
-- Border transition.
-    
-- Glow transition.
-    
-- Underline/line draw.
-    
-- Background gradient shift.
-    
+Examples of transition labels:
 
-But it must not have:
+- `HDL / WORK MODULE`
+- `HDL / SERVICES MODULE`
+- `HDL / PRICING MODULE`
+- `TRANSFORMATION ENGINE ONLINE`
+- `LOADING SERVICES MAP`
+- `ENTERING LABS MANIFESTO`
 
-- Magnetic pull.
-    
-- Movement.
-    
-- Translate.
-    
-- Scale.
-    
-- Tilt.
-    
-- Bounce.
-    
-- Jump.
-    
-- Parallax.
-    
+## Visual Behavior
 
-The hover should feel premium but stable.
+- fast gold scan line or wipe
+- HD logo pulse or glimmer
+- darkened micro-transition overlay
+- quick system label
+- page enters cleanly after
 
-Update any magnetic wrapper logic so it excludes Start a Project buttons.
+## Requirements
 
-Use a class or attribute such as:
+- transitions must remain fast
+- no blank page issues
+- no excessive wait
+- reduced-motion fallback required
 
-```txt
-data-no-magnetic="true"
+Upgrade existing page transitions instead of replacing them recklessly.
+
+---
+
+# Part 8 — Project-Specific Color Moods
+
+## Goal
+
+Each project should influence its visual environment slightly.
+
+This makes Work feel more immersive and less repetitive.
+
+## Required Moods
+
+### Higgins Building Group
+
+- navy / gold luxury
+- warm wood / homebuilder confidence
+
+### Wyatt Bullock Photography
+
+- black / white / elegant photography mood
+- high contrast
+
+### Davis Higgins Portfolio
+
+- blue / gold / personal brand clean tech feel
+
+### AI Workflow System
+
+- darker technical mood
+- electric blue / intelligent systems energy
+
+## Implementation
+
+When hovering/selecting/focusing a project:
+
+- subtle background lighting shifts
+- accent glow changes slightly
+- color tone of surrounding UI reacts slightly
+
+Do not change the whole site drastically. Keep it subtle and premium.
+
+---
+
+# Part 9 — Services Motion Map
+
+## Goal
+
+Replace or upgrade standard Services presentation into a connected system map.
+
+## Services to Represent
+
+- Website Development
+- Brand Systems
+- Modern UX
+- Performance Optimization
+- Domain Transition Support
+- Conversion Paths
+- Client-Owned Source Code
+- SEO-Ready Structure
+
+## Visual Concept
+
+A connected node map.
+
+Example logic:
+
+Website Development  
+↓  
+Brand Systems → Modern UX → Conversion Paths  
+↓  
+Performance Optimization → Domain Transition → Client-Owned Source
+
+## Required Behavior
+
+- nodes connect with animated lines
+- user hovers nodes
+- active service becomes emphasized
+- connected services animate in relation
+- description panel updates
+- lines glow or animate
+- this should feel like a digital systems map
+
+## Placement
+
+Services page.
+
+## Suggested Component
+
+- `src/components/ServicesMotionMap.jsx`
+- `src/components/ServicesMotionMap.css`
+
+---
+
+# Part 10 — Scene-Based Home Page
+
+## Goal
+
+Home should feel more like a progression of cinematic scenes rather than just stacked sections.
+
+## Required Scene Structure
+
+### Scene 01 — The Lab
+
+Purpose:  
+Introduce Higgins Digital Labs as an experimental environment.
+
+Visual ideas:
+
+- HD Labs identity
+- premium wordmark animation
+- subtle lab-like background
+- system boot / current module language if it fits
+
+### Scene 02 — The Engine
+
+Purpose:  
+Show the transformation system.
+
+Visual ideas:
+
+- teaser version of Transformation Engine
+- system labels
+- motion cues
+- route into Work page
+
+### Scene 03 — The Output
+
+Purpose:  
+Show what the lab produces.
+
+Visual ideas:
+
+- premium final websites
+- client-ready systems
+- launch standards
+- CTA to Work / Start a Project
+
+## Requirements
+
+Each scene should have:
+
+- distinct visual identity
+- strong transitions between scenes
+- different content emphasis
+- route-consistent styling
+
+---
+
+# Part 11 — Animated Higgins Digital Labs Wordmark Interactions
+
+## Goal
+
+The Higgins Digital Labs wordmark should feel more alive and special.
+
+## Required Behavior
+
+Use this in a few key places, not everywhere.
+
+Possible interactions:
+
+- letters subtly separate then lock into place
+- gold scan line moves across the wordmark
+- `Experimental Interface Systems` appears beneath on hover or reveal
+- HD logo glimmers once during load or reveal
+- wordmark can animate on hero entry
+
+## Suggested Placement
+
+- Home scene 01
+- header brand area
+- Labs Manifesto overlay
+- route transition micro moments
+
+Keep it subtle and premium.
+
+---
+
+# Part 12 — Scroll-Synced Screenshot Slicing
+
+## Goal
+
+Add a high-end visual effect where screenshots slice and reassemble through scroll.
+
+## Required Behavior
+
+For selected visuals on Work page:
+
+- screenshot breaks into horizontal slices
+- slices shift subtly
+- text or linework can move between slices
+- slices reassemble into a final clean image
+- effect should feel cinematic, not glitchy
+- use sparingly and only where it strengthens the storytelling
+
+## Suggested Placement
+
+- Work page
+- possibly within Transformation Engine or project focus overlay
+
+## Suggested Component
+
+- `src/components/SlicedScreenshotReveal.jsx`
+- `src/components/SlicedScreenshotReveal.css`
+
+---
+
+# Part 13 — Labs Manifesto Micro-Page or Overlay
+
+## Goal
+
+Create a dedicated premium Labs Manifesto experience.
+
+This can be a route or overlay. It must feel like a special internal system page.
+
+## Preferred Access
+
+- command palette command
+- possible subtle trigger from About page
+- optional button or micro-link in header / footer / About page
+
+## Required Content
+
+Core manifesto lines:
+
+- Clarity before decoration.
+- Motion with purpose.
+- Performance as a feature.
+- Trust as the outcome.
+
+You may also include:
+
+- Higgins Digital is the client-facing studio.
+- Higgins Digital Labs is the experimental interface environment where new motion, layout, and conversion systems are tested before becoming client-ready.
+
+## Required Behavior
+
+- opens as a sleek overlay or dedicated micro-page
+- premium entrance animation
+- HD Labs wordmark interaction can appear here
+- dark premium presentation
+- close cleanly if overlay
+- keyboard accessible
+- Escape closes if overlay
+
+## Suggested Component
+
+- `src/components/LabsManifestoOverlay.jsx`
+- `src/components/LabsManifestoOverlay.css`
+
+or a dedicated route/page if cleaner.
+
+---
+
+# Part 14 — Custom Cursor Must Become Instant
+
+## Problem
+
+The custom cursor is currently too slow and trails behind the real mouse.
+
+## Goal
+
+Make the cursor feel nearly locked to the user’s pointer.
+
+## Required Behavior
+
+- cursor should move much faster and more tightly
+- reduce lag significantly
+- minimize smoothing delay
+- keep it premium but responsive
+- do not let it feel floaty
+- do not break existing cursor states
+
+## Requirements
+
+- desktop only
+- still disabled on touch/mobile devices
+- keep all current cursor states, improving them if needed:
+    - VIEW
+    - DRAG
+    - START
+    - COMMAND
+    - VISIT
+    - AUDIO
+    - LAB
+- if current logic uses too much interpolation, reduce it
+- if current logic uses requestAnimationFrame smoothing, tighten it aggressively
+- prioritize pointer accuracy over dramatic lagged motion
+
+## Suggested Technical Direction
+
+Inspect current cursor implementation and optimize:
+
+- movement calculations
+- interpolation factor
+- animation frame updates
+- CSS transform timing
+- transition durations
+
+Potential strategies:
+
+- make the primary cursor dot effectively instant
+- if a secondary ring/trail exists, it can remain slightly softer
+- but the main cursor position must feel immediate
+
+Do not allow the main visible cursor to noticeably lag behind the actual mouse.
+
+---
+
+# Required File / Component Targets
+
+These are suggested targets. Adapt to the existing project structure if needed.
+
+## Likely Files to Create or Update
+
+- `src/components/TransformationEngine.jsx`
+- `src/components/TransformationEngine.css`
+- `src/components/BeforeAfterSlider.jsx`
+- `src/components/BeforeAfterSlider.css`
+- `src/components/RebuildTimeline.jsx`
+- `src/components/RebuildTimeline.css`
+- `src/components/DeconstructedScreenshot.jsx`
+- `src/components/DeconstructedScreenshot.css`
+- `src/components/ProjectFocusOverlay.jsx`
+- `src/components/ProjectFocusOverlay.css`
+- `src/components/ServicesMotionMap.jsx`
+- `src/components/ServicesMotionMap.css`
+- `src/components/SlicedScreenshotReveal.jsx`
+- `src/components/SlicedScreenshotReveal.css`
+- `src/components/LabsManifestoOverlay.jsx`
+- `src/components/LabsManifestoOverlay.css`
+
+Likely files to update:
+
+- `src/components/CustomCursor.jsx`
+- `src/components/CustomCursor.css`
+- `src/components/PageTransition.jsx`
+- `src/components/PageTransition.css`
+- `src/components/Header.jsx`
+- `src/components/Header.css`
+- `src/pages/HomePage.jsx`
+- `src/pages/HomePage.css`
+- `src/pages/WorkPage.jsx`
+- `src/pages/WorkPage.css`
+- `src/pages/ServicesPage.jsx`
+- `src/pages/ServicesPage.css`
+- `src/pages/AboutPage.jsx`
+- `src/pages/AboutPage.css`
+- `src/data/siteContent.js`
+- `src/App.jsx`
+
+Do not force this exact structure if the app already has a better pattern, but organize the code cleanly.
+
+---
+
+# Data Requirements
+
+Update `src/data/siteContent.js` to support the new systems.
+
+Add or expand:
+
+- transformationEngineStages
+- rebuild timeline steps
+- services map nodes
+- manifesto content
+- route transition labels
+- project-specific mood metadata
+- project detail content
+- cursor label metadata if needed
+
+Possible structure:
+
+```
+export const labsManifesto = [  "Clarity before decoration.",  "Motion with purpose.",  "Performance as a feature.",  "Trust as the outcome."];
 ```
 
-or:
+```
+export const rebuildTimelineSteps = [  "Intake",  "Audit",  "Direction",  "Interface",  "Build",  "Launch"];
+```
 
-```txt
-className="no-motion-cta"
+```
+export const routeModuleLabels = {  "/": "HDL / HOME MODULE",  "/work": "HDL / WORK MODULE",  "/services": "HDL / SERVICES MODULE",  "/about": "HDL / ABOUT MODULE",  "/pricing": "HDL / PRICING MODULE",  "/start": "HDL / START MODULE"};
 ```
 
 ---
 
-# Existing Features That Must Not Break
+# Implementation Workflow for Claude Code
 
-Do not break:
+## Step 1 — Inspect Current Project
 
-- Multi-page tab/routing system.
-    
-- Header navigation.
-    
-- HD logo usage.
-    
-- Higgins Digital Labs naming.
-    
-- Custom cursor.
-    
-- Cursor color/style states.
-    
-- Sound toggle if already implemented.
-    
-- Command palette if already implemented.
-    
-- Live metrics if already implemented.
-    
-- Loading sequence if already implemented.
-    
-- Route-specific backgrounds.
-    
-- Footer moving gold line.
-    
-- Real project screenshots.
-    
-- Mobile responsiveness.
-    
-- Reduced motion.
-    
-- Vercel build.
-    
-
----
-
-# Implementation Workflow
-
-## Step 1 — Inspect Current App
+Before editing, inspect the repo carefully.
 
 Run:
 
-```bash
-pwd
-ls
-find . -maxdepth 3 -type f | sed 's#^\./##' | sort | head -350
+```
+pwdlsfind . -maxdepth 3 -type f | sed 's#^\./##' | sort | head -350
 ```
 
 Inspect:
 
-```txt
-package.json
-src/App.jsx
-src/main.jsx
-src/components
-src/pages
-src/sections
-src/data
-src/assets
-public
-```
+- `package.json`
+- `src/App.jsx`
+- `src/main.jsx`
+- `src/components`
+- `src/pages`
+- `src/data`
+- `src/assets`
+- `public`
 
-Find:
+Identify:
 
-- Where “Real builds, floating in 3D space.” is rendered.
-    
-- Whether it is a component, data string, or hardcoded section.
-    
-- Where it appears on Home and Work.
-    
-- Where Start a Project buttons are implemented.
-    
-- Whether magnetic effects wrap those buttons.
-    
-- Where project screenshots are defined.
-    
-- Current cursor implementation.
-    
-- Current route transition implementation.
-    
+- how current Transformation Engine works
+- how cursor is currently implemented
+- how page transitions currently work
+- how project screenshots are currently managed
+- how Work page is structured
+- how Services page is structured
+- where command palette hooks into the app
+- whether manifesto overlay already exists in some form
+
+Do not assume anything. Read the real code first.
 
 ---
 
-## Step 2 — Remove the Old Section
+## Step 2 — Plan Before Editing
 
-Remove the “Real builds, floating in 3D space.” section from Home and Work.
+Make a short internal plan before touching files.
 
-Ensure:
+Plan should include:
 
-- No leftover empty spacing.
-    
-- No unused imports.
-    
-- No duplicate old section.
-    
-- No broken layout.
-    
+1. which existing systems to upgrade
+2. which new components to create
+3. where each requested idea will live
+4. how to preserve build stability
+5. how to keep mobile safe
 
 ---
 
-## Step 3 — Build Transformation Engine
+## Step 3 — Upgrade Transformation Engine First
 
-Create:
-
-```txt
-TransformationEngine.jsx
-TransformationEngine.css
-```
+This is the highest-priority system.
 
 Implement:
 
-- `variant="teaser"` for Home.
-    
-- `variant="full"` for Work.
-    
+- different visual state per stage
+- meaningful progression
+- stronger Work page version
+- Home teaser version
+- integration with HBG assets
+- scroll/stage logic
+- mobile fallback
 
-Example usage:
-
-```jsx
-<TransformationEngine variant="teaser" />
-<TransformationEngine variant="full" />
-```
-
-Home teaser should be compact and link to Work.
-
-Work full version should be cinematic and scroll-driven.
+Do not leave it as “same image in every stage.”
 
 ---
 
-## Step 4 — Add Scroll/Stage Animation
+## Step 4 — Add HBG Before/After Slider
 
-For the full Work version:
-
-- Use GSAP ScrollTrigger if already used in the project.
-    
-- Pin on desktop only if stable.
-    
-- Update active stage through scroll progress.
-    
-- Animate diagnostic visuals per stage.
-    
-- Refresh ScrollTrigger after route changes if needed.
-    
-- Disable pinning on mobile/reduced motion.
-    
-
-If GSAP pinning is too risky, use an advanced sticky layout with Framer Motion and IntersectionObserver. It still needs to feel cinematic.
-
----
-
-## Step 5 — Add Project Focus Overlay
-
-Implement project focus overlay for Work project cards.
-
-Requirements:
-
-- Click screenshot/card opens overlay.
-    
-- Escape closes overlay.
-    
-- Close button closes overlay.
-    
-- Overlay uses Framer Motion.
-    
-- Uses real screenshot.
-    
-- Shows project details.
-    
-- Looks premium.
-    
-- Mobile safe.
-    
-
----
-
-## Step 6 — Upgrade Screenshot Frames
-
-Create a reusable screenshot frame if helpful:
-
-```txt
-ProjectScreenshotFrame.jsx
-ProjectScreenshotFrame.css
-```
-
-Use it in:
-
-- Transformation Engine.
-    
-- Work project cards.
-    
-- Focus overlay.
-    
-- Any other project screenshot display.
-    
-
----
-
-## Step 7 — Upgrade Page Transitions
-
-Improve existing page transitions if possible.
-
-Do not break routing.
-
-Add:
-
-- Gold line wipe or pulse.
-    
-- HD logo micro moment.
-    
-- Fast transition.
-    
-- Reduced motion fallback.
-    
-
----
-
-## Step 8 — Add Work Page Section Index
-
-Add internal section index for Work page:
-
-```txt
-HDL / WORK
-01 — Engine
-02 — Projects
-03 — Focus
-04 — Launch
-```
-
-Clicking items scrolls within Work page only.
-
-Do not change main nav behavior.
-
----
-
-## Step 9 — Remove Start a Project Hover Motion
-
-Find all Start a Project buttons and remove movement-based hover/magnetic effects.
+Implement cleanly with real assets.
 
 Ensure:
 
-- No translate.
-    
-- No scale.
-    
-- No tilt.
-    
-- No magnetic pull.
-    
-- No jumping.
-    
-
-Keep:
-
-- Premium color/glow/border transition.
-    
+- drag works
+- cursor changes to DRAG
+- mobile works
+- it looks premium
 
 ---
 
-## Step 10 — Build and Verify
+## Step 5 — Upgrade Work Page
+
+Implement:
+
+- Rebuild Timeline
+- interface deconstruction hover
+- cinematic project open overlay
+- project-specific color moods
+- screenshot slicing
+- improved project presentation
+
+Work page should become one of the strongest pages on the entire site.
+
+---
+
+## Step 6 — Upgrade Services Page
+
+Implement:
+
+- Services Motion Map
+- connected node logic
+- active service interaction
+- supporting copy panel
+- animated line system
+
+---
+
+## Step 7 — Upgrade Home Page
+
+Implement:
+
+- 3-scene home structure
+- stronger scene transitions
+- transformation engine teaser
+- output scene
+- wordmark animation
+
+---
+
+## Step 8 — Add Labs Manifesto Experience
+
+Implement the manifesto overlay or micro-page.
+
+Make it polished and intentional.
+
+Integrate with command palette and/or About page.
+
+---
+
+## Step 9 — Upgrade Route Transitions and OS Aesthetic
+
+Implement:
+
+- module-switch transition micro-moments
+- system labels
+- route labels
+- premium fast transitions
+- HD Labs OS aesthetic details
+
+---
+
+## Step 10 — Fix Cursor Responsiveness
+
+This is a direct functional requirement.
+
+The cursor must become much faster and more accurate.
+
+Verify:
+
+- desktop only
+- no double cursor
+- no performance degradation
+- existing hover states still work
+- main cursor position no longer feels laggy
+
+---
+
+## Step 11 — Polish and Verify
+
+After implementation, review:
+
+- page spacing
+- z-index layers
+- route transitions
+- mobile layouts
+- reduced motion
+- cursor speed
+- scroll behavior
+- build stability
+- overlay interactions
+- close states
+- keyboard support where applicable
+
+---
+
+## Step 12 — Build and Fix Errors
 
 Run:
 
-```bash
+```
 npm run build
 ```
 
-Fix all errors.
+If lint exists, also run:
 
-If lint exists:
-
-```bash
+```
 npm run lint
 ```
 
-Fix practical lint errors.
+Fix all meaningful errors before finishing.
+
+Do not claim completion unless build passes.
 
 ---
 
 # Acceptance Criteria
 
-This phase is complete only when:
+This phase is complete only when all of the following are true:
 
-- “Real builds, floating in 3D space.” is removed from Home.
-    
-- “Real builds, floating in 3D space.” is removed from Work.
-    
-- The new Transformation Engine appears on Home as a teaser.
-    
-- The new Transformation Engine appears on Work as a full cinematic section.
-    
-- The Work Transformation Engine uses four stages:
-    
-    - Audit
-        
-    - Structure
-        
-    - Interface
-        
-    - Launch
-        
-- The engine feels significantly more impressive than the removed section.
-    
-- Real screenshots are integrated into the engine or Work visuals.
-    
-- The engine includes diagnostic lines, status chips, gold progress, HD Labs branding, and premium screenshot frames.
-    
-- Project Focus Mode works on Work page.
-    
-- Project screenshots have upgraded premium frames.
-    
-- Work page has a subtle internal section index.
-    
-- Page transitions are upgraded without causing blank pages.
-    
-- Start a Project buttons no longer move on hover.
-    
-- Start a Project buttons still look premium.
-    
-- Magnetic effects do not apply to Start a Project buttons.
-    
-- Custom cursor still works.
-    
-- Cursor shows VIEW state over project screenshots/cards.
-    
-- Sound toggle, command palette, loading sequence, live metrics, route backgrounds, and other existing features still work if present.
-    
-- Mobile layout remains clean.
-    
-- Reduced motion is respected.
-    
-- No horizontal overflow.
-    
-- `npm run build` passes.
-    
+## Transformation Engine
+
+- each stage has a clearly different visual state
+- it no longer shows basically the same HBG image through every stage
+- the progression feels like an actual transformation
+
+## Before/After Slider
+
+- HBG before/after slider exists
+- drag works
+- cursor changes to DRAG
+- mobile works
+
+## Rebuild Timeline
+
+- Work page includes a cinematic rebuild timeline
+- steps activate clearly
+- it feels story-driven
+
+## Interface Deconstruction
+
+- project visuals support layered deconstruction hover behavior
+- effect feels premium
+
+## Project Overlay
+
+- clicking a project opens a cinematic overlay
+- transition is polished
+- close works cleanly
+- mobile works
+
+## HD Labs OS Aesthetic
+
+- site has more premium system-language details
+- micro labels feel intentional, not spammy
+
+## Route Transitions
+
+- route transitions feel more like module changes
+- they remain fast and stable
+- no blank page issue
+
+## Project Color Moods
+
+- project-specific accent moods exist
+- they are subtle and premium
+
+## Services Motion Map
+
+- Services page uses a connected system map
+- hover logic and line animation work
+
+## Home Page
+
+- Home page is restructured into scenes
+- scenes feel distinct and cinematic
+
+## Wordmark Interactions
+
+- Higgins Digital Labs wordmark has premium animated behavior in key places
+
+## Screenshot Slicing
+
+- selected screenshots use scroll-synced slicing effect
+- effect feels cinematic, not gimmicky
+
+## Labs Manifesto
+
+- manifesto overlay or micro-page exists
+- it is accessible via intended triggers
+- it looks premium
+
+## Cursor
+
+- cursor feels much faster and nearly locked to the pointer
+- noticeable lag is removed
+- states still work
+- mobile still disables custom cursor
+
+## Stability
+
+- mobile remains usable
+- reduced motion is respected
+- no horizontal overflow
+- existing architecture remains intact
+- `npm run build` passes
 
 ---
 
@@ -1111,35 +911,53 @@ This phase is complete only when:
 
 When finished, respond with:
 
-```txt
-Summary:
-- What was removed.
-- What replaced it.
-- Why the new experience is better.
+## Summary
 
-Files changed:
-- List every created/modified file.
+- what changed
+- why the update is stronger
 
-Transformation Engine:
-- Explain Home teaser.
-- Explain Work full version.
-- Explain stages and animations.
+## Major features implemented
 
-Project Focus Mode:
-- Explain how it works.
+- Transformation Engine upgrade
+- Before/After slider
+- Rebuild Timeline
+- Interface Deconstruction
+- Cinematic Project Overlay
+- HD Labs OS aesthetic
+- Route transition upgrades
+- Project color moods
+- Services Motion Map
+- Scene-based Home page
+- Wordmark interactions
+- Screenshot slicing
+- Labs Manifesto
+- Cursor responsiveness fix
 
-Screenshot upgrades:
-- Explain new frame/treatment.
+## Files changed
 
-Start a Project button:
-- Confirm hover movement/magnetic effects were removed.
+- list every created and modified file
 
-Build result:
-- State whether npm run build passed.
+## Cursor fix
 
-Remaining recommended upgrades:
-- Short list only.
-```
+- explain exactly how cursor lag was reduced
+- explain any remaining smoothing behavior if present
+
+## Page-by-page changes
+
+- Home
+- Work
+- Services
+- About
+- Pricing
+- Start
+
+## Build result
+
+- state whether `npm run build` passed
+
+## Remaining recommended upgrades
+
+- short list only
 
 Do not claim completion unless the build passes.
 
@@ -1147,10 +965,8 @@ Do not claim completion unless the build passes.
 
 # Final Instruction
 
-Make this special.
+Make this brilliant.
 
-The removed floating builds section should be replaced with something much more impressive, cinematic, and specific to Higgins Digital Labs.
+This phase should move Higgins Digital Labs meaningfully closer to a truly special interactive experience. The implementation should be careful, original, technically stable, and visually impressive. Prioritize coherence over random effects. Every added feature should make the site feel more intentional, more premium, and more memorable.
 
-This should feel like an interactive transformation system, not another screenshot section.
-
-Keep it original. Keep it premium. Keep it aligned with Higgins Digital. Push the site closer to the interaction quality of elite cinematic websites while maintaining usability, performance, and build stability.
+Read the codebase first, plan carefully, implement step by step, run the build, and fix every error before finishing.

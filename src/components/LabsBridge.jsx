@@ -39,7 +39,7 @@ export default function LabsBridge() {
               target="_blank"
               rel="noopener noreferrer"
               className="bridge__cta"
-              data-cursor="button"
+              data-cursor="visit"
             >
               Visit Higgins Digital
               <span aria-hidden="true">↗</span>

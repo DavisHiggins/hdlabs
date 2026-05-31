@@ -9,9 +9,10 @@ import './TransformationEngine.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// One real build that visibly evolves across the four stages.
-const ENGINE_SHOT = '/hbgpicture.png';
+// One real build that visibly evolves across the four stages — each stage has
+// its own real screenshot so the page genuinely transforms, not just re-skins.
 const STAGES = transformationEngineStages;
+const TEASER_SHOT = STAGES[STAGES.length - 1].image;
 
 // The animated visual panel that re-skins itself per active stage.
 function EngineVisual({ active }) {
@@ -27,13 +28,17 @@ function EngineVisual({ active }) {
         </div>
 
         <div className="engine-visual__screen">
-          <img
-            className="engine-visual__shot"
-            src={ENGINE_SHOT}
-            alt="Project being rebuilt by the Transformation Engine"
-            loading="lazy"
-            decoding="async"
-          />
+          {/* Crossfading real stage screenshots — the page visibly rebuilds */}
+          {STAGES.map((s, i) => (
+            <img
+              key={s.number}
+              className={`engine-visual__shot${active === i ? ' is-active' : ''}`}
+              src={s.image}
+              alt={`${s.title} stage — Higgins Building Group rebuild`}
+              loading="lazy"
+              decoding="async"
+            />
+          ))}
 
           {/* Stage 01 — Audit: diagnostic scan + corner labels */}
           <div className="engine-layer engine-layer--audit" aria-hidden="true">
@@ -128,15 +133,21 @@ export default function TransformationEngine({ variant = 'full' }) {
     const ctx = gsap.context(() => {
       const trigger = ScrollTrigger.create({
         trigger: section,
+        // The sticky is exactly one viewport tall and centered, so pinning at
+        // top/top means the full section is in frame before stages progress.
         start: 'top top',
-        end: `+=${STAGES.length * 100}%`,
+        // ~0.9 viewport of scroll per stage → each stage is clearly readable.
+        end: () => '+=' + window.innerHeight * STAGES.length * 0.9,
         pin: '.engine__sticky',
-        scrub: 0.5,
+        pinSpacing: true,
+        anticipatePin: 1,
+        scrub: 0.6,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
+          // Clamp slightly inside each band so stages don't skip at the edges.
           const idx = Math.min(
             STAGES.length - 1,
-            Math.floor(self.progress * STAGES.length)
+            Math.floor(self.progress * STAGES.length + 0.0001)
           );
           setActive(idx);
           if (progressRef.current) {
@@ -144,7 +155,25 @@ export default function TransformationEngine({ variant = 'full' }) {
           }
         },
       });
-      return () => trigger.kill();
+
+      // Recalculate once the heavy stage screenshots have decoded, so pin
+      // start/end positions are accurate (prevents early/late triggering).
+      const imgs = section.querySelectorAll('.engine-visual__shot');
+      let pending = imgs.length;
+      const onLoad = () => {
+        pending -= 1;
+        if (pending <= 0) ScrollTrigger.refresh();
+      };
+      imgs.forEach((img) => {
+        if (img.complete) onLoad();
+        else img.addEventListener('load', onLoad, { once: true });
+      });
+      const refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 400);
+
+      return () => {
+        clearTimeout(refreshTimer);
+        trigger.kill();
+      };
     }, section);
 
     return () => ctx.revert();
@@ -188,8 +217,8 @@ export default function TransformationEngine({ variant = 'full' }) {
               </div>
               <div className="engine-visual__screen">
                 <img
-                  className="engine-visual__shot"
-                  src={ENGINE_SHOT}
+                  className="engine-visual__shot is-active"
+                  src={TEASER_SHOT}
                   alt="Higgins Digital Labs transformation preview"
                   loading="lazy"
                   decoding="async"

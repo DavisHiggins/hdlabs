@@ -1,0 +1,41 @@
+.os-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.4rem;
+  align-items: center;
+}
+
+.os-row__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+.os-row__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6fe0a0;
+  box-shadow: 0 0 8px #6fe0a0;
+  animation: osPulse 2.4s ease-in-out infinite;
+}
+
+.os-row__dot--ver {
+  background: var(--color-gold);
+  box-shadow: 0 0 8px var(--color-gold);
+}
+
+@keyframes osPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-row__dot { animation: none; }
+}

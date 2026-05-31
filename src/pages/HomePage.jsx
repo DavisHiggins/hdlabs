@@ -6,8 +6,19 @@ import TransformationEngine from '../components/TransformationEngine.jsx';
 import LiveMetricsPanel from '../components/LiveMetricsPanel.jsx';
 import LabsBridge from '../components/LabsBridge.jsx';
 import MagneticElement from '../components/MagneticElement.jsx';
+import OSStatusRow from '../components/OSStatusRow.jsx';
 import { projects } from '../data/siteContent.js';
 import './HomePage.css';
+
+function SceneLabel({ num, title }) {
+  return (
+    <div className="scene-label">
+      <span className="scene-label__num">SCENE {num}</span>
+      <span className="scene-label__line" />
+      <span className="scene-label__title">{title}</span>
+    </div>
+  );
+}
 
 const EASE = [0.22, 1, 0.36, 1];
 
@@ -30,7 +41,15 @@ const FEATURED = projects.slice(0, 2);
 export default function HomePage() {
   return (
     <>
+      {/* ── Scene 01 — The Lab ── */}
       <Hero />
+
+      <section className="home-oslab">
+        <div className="page-shell home-oslab__inner">
+          <SceneLabel num="01" title="The Lab" />
+          <OSStatusRow className="home-oslab__status" />
+        </div>
+      </section>
 
       {/* Capability marquee strip */}
       <section className="home-strip">
@@ -44,11 +63,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* The Transformation Engine — teaser */}
+      {/* ── Scene 02 — The Engine ── */}
+      <div className="page-shell home-scene-head">
+        <SceneLabel num="02" title="The Engine" />
+      </div>
       <TransformationEngine variant="teaser" />
 
       {/* Live diagnostics */}
       <LiveMetricsPanel variant="home" />
+
+      {/* ── Scene 03 — The Output ── */}
+      <div className="page-shell home-scene-head">
+        <SceneLabel num="03" title="The Output" />
+      </div>
 
       {/* Featured work teaser */}
       <section className="home-featured section">

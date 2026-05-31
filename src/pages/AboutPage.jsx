@@ -3,11 +3,14 @@ import Manifesto from '../components/Manifesto.jsx';
 import DesignPrinciplesGrid from '../components/DesignPrinciplesGrid.jsx';
 import LabsBridge from '../components/LabsBridge.jsx';
 import HDLogo from '../components/HDLogo.jsx';
+import { useInteraction } from '../context/InteractionContext.jsx';
 import './AboutPage.css';
 
 const EASE = [0.22, 1, 0.36, 1];
 
 export default function AboutPage() {
+  const { setManifestoOpen } = useInteraction();
+
   return (
     <div className="page-top about-page">
       <div className="page-shell">
@@ -17,7 +20,7 @@ export default function AboutPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
         >
-          <span className="section-label">About</span>
+          <span className="section-label">About · HDL / ABOUT MODULE</span>
           <h1 className="page-head__title">
             The lab behind <span className="text-gold">sharper digital experiences.</span>
           </h1>
@@ -26,6 +29,14 @@ export default function AboutPage() {
             frontend ideas, and premium interface concepts are tested before they become
             client-ready standards.
           </p>
+          <button
+            type="button"
+            className="btn btn-ghost about-manifesto-btn"
+            onClick={() => setManifestoOpen(true)}
+            data-cursor="lab"
+          >
+            Open the Labs Manifesto
+          </button>
         </motion.header>
       </div>
 

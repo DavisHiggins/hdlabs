@@ -42,4 +42,6 @@
 
   /* Header */
   --header-height: 72px;
+  /* Clearance below the fixed header for pinned full-viewport sections */
+  --header-offset: 96px;
 }

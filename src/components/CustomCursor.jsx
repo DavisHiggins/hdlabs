@@ -1,6 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import './CustomCursor.css';
 
+// Text shown inside the ring per state (empty = no label).
+const CURSOR_LABELS = {
+  view: 'View',
+  image: 'View',
+  project: 'View',
+  drag: 'Drag',
+  start: 'Start',
+  visit: 'Visit',
+  audio: 'Audio',
+  lab: 'Lab',
+};
+
 /**
  * Higgins Digital Labs custom cursor.
  *
@@ -56,6 +68,10 @@ export default function CustomCursor() {
     let ry = y;
     let raf;
 
+    // Dot is locked to the pointer (instant). Ring follows with only a hair of
+    // smoothing so it reads as tight, not floaty.
+    const RING_FOLLOW = 0.6;
+
     const setDot = () => {
       dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
     };
@@ -76,8 +92,11 @@ export default function CustomCursor() {
     };
 
     const tick = () => {
-      rx += (x - rx) * 0.18;
-      ry += (y - ry) * 0.18;
+      // Snap to pointer once within a pixel to kill perceptible trailing.
+      rx += (x - rx) * RING_FOLLOW;
+      ry += (y - ry) * RING_FOLLOW;
+      if (Math.abs(x - rx) < 0.5) rx = x;
+      if (Math.abs(y - ry) < 0.5) ry = y;
       ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
       raf = requestAnimationFrame(tick);
     };
@@ -144,7 +163,7 @@ export default function CustomCursor() {
       aria-hidden="true"
     >
       <div ref={ringRef} className="cursor__ring">
-        <span className="cursor__label">View</span>
+        <span className="cursor__label">{CURSOR_LABELS[variant] || ''}</span>
       </div>
       <div ref={dotRef} className="cursor__dot" />
     </div>

@@ -47,6 +47,57 @@
   .home-strip__track { animation: none; }
 }
 
+/* ── Scene labels ── */
+.scene-label {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.scene-label__num {
+  font-family: var(--font-display);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.scene-label__line {
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-gold-line), transparent);
+}
+
+.scene-label__title {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.home-scene-head {
+  padding-top: clamp(3rem, 7vw, 5rem);
+}
+
+/* Scene 01 OS lab strip */
+.home-oslab {
+  border-block: 1px solid var(--color-line-soft);
+  padding-block: 1.25rem;
+  background: rgba(7, 12, 22, 0.35);
+}
+
+.home-oslab__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
 /* ── Featured teaser ── */
 .home-featured__head {
   display: flex;

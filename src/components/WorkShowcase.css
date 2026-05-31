@@ -1,17 +1,29 @@
 /* ─── Work Showcase (horizontal pinned) ────────────── */
+/* Desktop: the pinned section fills exactly one viewport and is vertically
+   centered (with header clearance) so the head, cards, and progress are all
+   visible before the horizontal swipe begins. border-box keeps padding inside
+   the 100svh so the pinned element never grows taller than the screen. */
 .work {
   position: relative;
-  padding: 6rem 0;
+  box-sizing: border-box;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(1.25rem, 3vh, 2.25rem);
+  padding-top: var(--header-offset);
+  padding-bottom: clamp(1.5rem, 4vh, 2.5rem);
   overflow: hidden;
 }
 
 .work__head {
   max-width: var(--max-width);
-  margin: 0 auto 4rem;
+  margin: 0 auto;
   padding: 0 var(--gutter);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .work__title {
@@ -49,11 +61,11 @@
 /* Project card */
 .work-card {
   flex-shrink: 0;
-  width: clamp(380px, 38vw, 560px);
+  width: clamp(360px, 34vw, 520px);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 1.8rem;
+  gap: 1.1rem;
+  padding: 1.4rem;
   border: 1px solid var(--color-line);
   border-radius: 20px;
   background: linear-gradient(135deg, rgba(7, 20, 38, 0.55), rgba(11, 29, 52, 0.35));
@@ -65,12 +77,13 @@
 }
 
 .work-card:hover {
-  border-color: var(--color-gold-line);
+  border-color: var(--mood-accent, var(--color-gold-line));
   transform: translateY(-4px);
+  box-shadow: 0 30px 70px -40px var(--mood-glow, rgba(214, 173, 91, 0.18));
 }
 
 .work-card--gold:hover {
-  border-color: var(--color-gold);
+  border-color: var(--mood-accent, var(--color-gold));
 }
 
 .work-card__head {
@@ -164,6 +177,8 @@
 
 .work-card__visual .browser-frame__shot {
   aspect-ratio: 16 / 10;
+  /* Cap so the rich card (visual + text rows) still fits one viewport */
+  max-height: clamp(150px, 22vh, 260px);
   transition: transform 0.6s var(--ease-out);
 }
 
@@ -247,7 +262,7 @@
 .work-card__body {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .work-card__name {
@@ -255,7 +270,7 @@
   align-items: center;
   justify-content: space-between;
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--color-white);
   margin: 0;
@@ -275,13 +290,18 @@
 .work-card__rows {
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.5rem;
 }
 
 .work-card__row {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
+}
+
+.work-card__row p {
+  font-size: 0.84rem;
+  line-height: 1.45;
 }
 
 .work-card__row-label {
@@ -358,8 +378,9 @@
 /* Progress */
 .work__progress {
   max-width: var(--max-width);
-  margin: 3rem auto 0;
+  margin: 0 auto;
   padding: 0 var(--gutter);
+  width: 100%;
 }
 
 .work__progress-track {
@@ -380,9 +401,14 @@
   transition: transform 0.2s linear;
 }
 
-/* Mobile */
+/* Mobile: normal document flow, native horizontal swipe (no pin/centering) */
 @media (max-width: 900px) {
-  .work { padding: 5rem 0; }
+  .work {
+    min-height: auto;
+    display: block;
+    padding: 4.5rem 0;
+  }
+  .work__head { margin-bottom: 2rem; }
   .work__viewport {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -398,6 +424,17 @@
     max-width: 360px;
     scroll-snap-align: start;
   }
+  .work-card__visual .browser-frame__shot { max-height: none; }
   .work__end { display: none; }
   .work__progress { display: none; }
+}
+
+/* Short desktop viewports: tighten further so the pinned section fits */
+@media (min-width: 901px) and (max-height: 820px) {
+  .work__title { font-size: clamp(1.5rem, 3vw, 2.2rem); }
+  .work__intro { font-size: 0.92rem; }
+  .work-card { gap: 0.85rem; padding: 1.2rem; }
+  .work-card__visual .browser-frame__shot { max-height: clamp(130px, 18vh, 200px); }
+  .work-card__rows { gap: 0.4rem; }
+  .work-card__row p { -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
 }

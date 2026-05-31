@@ -10,6 +10,7 @@ import PageTransition from './components/PageTransition.jsx';
 import SystemBootLoader from './components/SystemBootLoader.jsx';
 import CommandPalette from './components/CommandPalette.jsx';
 import PageIdentityIndicator from './components/PageIdentityIndicator.jsx';
+import LabsManifestoOverlay from './components/LabsManifestoOverlay.jsx';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <CustomCursor />
       <SystemBootLoader />
       <CommandPalette />
+      <LabsManifestoOverlay />
 
       <SmoothScroll>
         <ScrollToTop />

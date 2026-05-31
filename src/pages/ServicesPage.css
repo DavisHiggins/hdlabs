@@ -2,3 +2,27 @@
 .services-page .svc {
   padding-top: 2rem;
 }
+
+.services-map {
+  border-top: 1px solid var(--color-line-soft);
+}
+
+.services-map__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  max-width: 60ch;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.services-map__title {
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  letter-spacing: -0.02em;
+}
+
+.services-map__sub {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  max-width: 52ch;
+}
